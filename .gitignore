@@ -1,0 +1,7 @@
+.snakemake
+.~lock*
+results/
+data/*
+!data/sgil_extract.tsv
+#!data/gisaid_norm_cov2020_sequences.fasta
+results/

@@ -1,0 +1,244 @@
+country	Canada	#5E1D9D
+country	USA	#561EA4
+country	Mexico	#4F1FAA
+country	France	#4C24AF
+country	Algeria	#4929B4
+country	China	#462FBA
+country	Argentina	#4334BF
+country	Australia	#4039C4
+country	Austria	#4040C6
+country	Belarus	#3F46C9
+country	Belgium	#3F4DCB
+country	Brazil	#3F54CD
+country	Brunei	#3E5ACF
+country	Cambodia	#3F61D0
+country	Chile	#4067CF
+country	Colombia	#416DCE
+country	Costa Rica	#4273CE
+country	Croatia	#4379CD
+country	Czech Republic	#457FCB
+country	Democratic Republic of the Congo	#4784C8
+country	Denmark	#4988C5
+country	Ecuador	#4B8DC2
+country	Egypt	#4D92BF
+country	United Kingdom	#4F96BB
+country	Estonia	#529AB6
+country	Finland	#549DB2
+country	Gambia	#57A1AD
+country	Georgia	#5AA4A9
+country	Germany	#5CA8A4
+country	Ghana	#60AA9F
+country	Greece	#63AC9A
+country	Hong Kong	#67AE94
+country	Hungary	#6AB18F
+country	Iceland	#6DB38A
+country	India	#71B485
+country	India	#76B680
+country	Indonesia	#7AB77B
+country	Iran	#7EB876
+country	Ireland	#82BA72
+country	Israel	#86BB6D
+country	Italy	#8BBB69
+country	Japan	#90BC65
+country	Jordan	#94BD61
+country	Kazakhstan	#99BD5D
+country	South Korea	#9EBE5A
+country	Kuwait	#A2BE57
+country	Latvia	#A7BE54
+country	Latvia	#ACBD51
+country	Lithuania	#B1BD4E
+country	Luxembourg	#B5BD4C
+country	Malaysia	#BABC4A
+country	Nepal	#BEBB48
+country	Netherlands	#C3BA46
+country	New Zealand	#C7B944
+country	Nigeria	#CBB842
+country	Norway	#CFB541
+country	Pakistan	#D2B340
+country	Panama	#D5B03F
+country	Peru	#D9AE3E
+country	Philippines	#DCAB3C
+country	Poland	#DEA73B
+country	Portugal	#E0A33A
+country	Qatar	#E29E39
+country	Russia	#E39A38
+country	Saudi Arabia	#E59637
+country	Senegal	#E69036
+country	Singapore	#E68935
+country	Slovakia	#E68334
+country	Slovenia	#E67D33
+country	South Africa	#E67731
+country	Spain	#E66F30
+country	Sri Lanka	#E4672F
+country	Sweden	#E3602D
+country	Switzerland	#E2582B
+country	Taiwan	#E1502A
+country	Thailand	#E04828
+country	Turkey	#DF4027
+country	United Arab Emirates	#DE3826
+country	Uruguay	#DC3024
+country	Vietnam	#DB2823
+
+location	Quebec	#5E1D9D
+location	Canada	#561EA3
+location	USA	#4F1FAA
+location	Mexico	#4C24AF
+location	France	#4929B4
+location	Algeria	#462EB9
+location	China	#4333BE
+location	Argentina	#4039C3
+location	Australia	#403FC6
+location	Austria	#3F46C8
+location	Belarus	#3F4CCB
+location	Belgium	#3F53CD
+location	Brazil	#3E59CF
+location	Brunei	#3F60D0
+location	Cambodia	#4066CF
+location	Chile	#416CCE
+location	Colombia	#4272CE
+location	Costa Rica	#4378CD
+location	Croatia	#447ECC
+location	Czech Republic	#4682C9
+location	Democratic Republic of the Congo	#4887C6
+location	Denmark	#4A8CC3
+location	Ecuador	#4C91C0
+location	Egypt	#4E96BC
+location	United Kingdom	#5199B8
+location	Estonia	#539CB3
+location	Finland	#56A0AF
+location	Gambia	#59A3AA
+location	Georgia	#5BA7A6
+location	Germany	#5FA9A1
+location	Ghana	#62AB9C
+location	Greece	#65AD96
+location	Hong Kong	#69B091
+location	Hungary	#6CB28C
+location	Iceland	#70B487
+location	India	#74B582
+location	India	#78B67E
+location	Indonesia	#7CB879
+location	Iran	#80B974
+location	Ireland	#84BA6F
+location	Israel	#89BB6B
+location	Italy	#8DBC67
+location	Japan	#92BC63
+location	Jordan	#96BD5F
+location	Kazakhstan	#9BBE5B
+location	South Korea	#A0BE59
+location	Kuwait	#A4BE56
+location	Latvia	#A9BD53
+location	Latvia	#AEBD50
+location	Lithuania	#B3BD4D
+location	Luxembourg	#B7BD4B
+location	Malaysia	#BBBC49
+location	Nepal	#C0BB47
+location	Netherlands	#C4B945
+location	New Zealand	#C8B843
+location	Nigeria	#CCB742
+location	Norway	#D0B441
+location	Pakistan	#D3B240
+location	Panama	#D6AF3E
+location	Peru	#DAAD3D
+location	Philippines	#DDAA3C
+location	Poland	#DEA63B
+location	Portugal	#E0A23A
+location	Qatar	#E29D39
+location	Russia	#E49938
+location	Saudi Arabia	#E69537
+location	Senegal	#E68F36
+location	Singapore	#E68835
+location	Slovakia	#E68234
+location	Slovenia	#E67C33
+location	South Africa	#E67631
+location	Spain	#E56E30
+location	Sri Lanka	#E4672E
+location	Sweden	#E35F2D
+location	Switzerland	#E2572B
+location	Taiwan	#E14F2A
+location	Thailand	#DF4728
+location	Turkey	#DE4027
+location	United Arab Emirates	#DD3826
+location	Uruguay	#DC3024
+location	Vietnam	#DB2823
+
+province	Quebec	#5E1D9D
+province	USA	#561EA4
+province	Mexico	#4F1FAA
+province	France	#4C24AF
+province	Algeria	#4929B4
+province	China	#462FBA
+province	Argentina	#4334BF
+province	Australia	#4039C4
+province	Austria	#4040C6
+province	Belarus	#3F46C9
+province	Belgium	#3F4DCB
+province	Brazil	#3F54CD
+province	Brunei	#3E5ACF
+province	Cambodia	#3F61D0
+province	Chile	#4067CF
+province	Colombia	#416DCE
+province	Costa Rica	#4273CE
+province	Croatia	#4379CD
+province	Czech Republic	#457FCB
+province	Democratic Republic of the Congo	#4784C8
+province	Denmark	#4988C5
+province	Ecuador	#4B8DC2
+province	Egypt	#4D92BF
+province	United Kingdom	#4F96BB
+province	Estonia	#529AB6
+province	Finland	#549DB2
+province	Gambia	#57A1AD
+province	Georgia	#5AA4A9
+province	Germany	#5CA8A4
+province	Ghana	#60AA9F
+province	Greece	#63AC9A
+province	Hong Kong	#67AE94
+province	Hungary	#6AB18F
+province	Iceland	#6DB38A
+province	India	#71B485
+province	India	#76B680
+province	Indonesia	#7AB77B
+province	Iran	#7EB876
+province	Ireland	#82BA72
+province	Israel	#86BB6D
+province	Italy	#8BBB69
+province	Japan	#90BC65
+province	Jordan	#94BD61
+province	Kazakhstan	#99BD5D
+province	South Korea	#9EBE5A
+province	Kuwait	#A2BE57
+province	Latvia	#A7BE54
+province	Latvia	#ACBD51
+province	Lithuania	#B1BD4E
+province	Luxembourg	#B5BD4C
+province	Malaysia	#BABC4A
+province	Nepal	#BEBB48
+province	Netherlands	#C3BA46
+province	New Zealand	#C7B944
+province	Nigeria	#CBB842
+province	Norway	#CFB541
+province	Pakistan	#D2B340
+province	Panama	#D5B03F
+province	Peru	#D9AE3E
+province	Philippines	#DCAB3C
+province	Poland	#DEA73B
+province	Portugal	#E0A33A
+province	Qatar	#E29E39
+province	Russia	#E39A38
+province	Saudi Arabia	#E59637
+province	Senegal	#E69036
+province	Singapore	#E68935
+province	Slovakia	#E68334
+province	Slovenia	#E67D33
+province	South Africa	#E67731
+province	Spain	#E66F30
+province	Sri Lanka	#E4672F
+province	Sweden	#E3602D
+province	Switzerland	#E2582B
+province	Taiwan	#E1502A
+province	Thailand	#E04828
+province	Turkey	#DF4027
+province	United Arab Emirates	#DE3826
+province	Uruguay	#DC3024
+province	Vietnam	#DB2823
+

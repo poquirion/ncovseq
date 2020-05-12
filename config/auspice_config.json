@@ -1,0 +1,55 @@
+{
+  "title": "Genomic epidemiology of novel coronavirus",
+  "build_url": "https://github.com/nextstrain/ncov",
+  "maintainers": [
+    {"name": "Eric Fournier", "url": "https://github.com/EricFournier3"},
+    {"name": "Pierre-Olivier Quirion", "url": "https://github.com/poquirion"}
+  ],
+  "colorings": [
+    {
+      "key": "location",
+      "title": "Location",
+      "type": "categorical"
+    },
+    {
+      "key": "province",
+      "title": "Province",
+      "type": "categorical"
+    },
+    {
+      "key": "age",
+      "title": "Age",
+      "type": "continuous"
+    },
+    {
+      "key": "province_exposure",
+      "title": "Province exposure",
+      "type": "categorical"
+    },
+    {
+      "key": "location_exposure",
+      "title": "Location exposure",
+      "type": "categorical"
+    }
+  ],
+  "geo_resolutions": [
+    "location",
+    "province"
+  ],
+  "display_defaults": {
+    "color_by": "location",
+    "distance_measure": "num_date",
+    "geo_resolution": "location",
+    "map_triplicate": true,
+    "branch_label": "none"
+  },
+  "filters": [
+    "province",
+    "location"
+  ],
+  "panels": [
+    "tree",
+    "map",
+    "entropy"
+  ]
+}

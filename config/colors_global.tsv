@@ -1,0 +1,1252 @@
+rta	G0C	#5E1D9D
+rta	G0G	#5C1D9F
+rta	G0L	#5A1DA1
+rta	G0N	#581EA2
+rta	G0P	#551EA4
+rta	G0R	#531EA6
+rta	G0S	#511EA8
+rta	G0V	#4F1EAA
+rta	G0W	#4E20AB
+rta	G0X	#4E21AD
+rta	G0Z	#4D23AE
+rta	G1B	#4C24AF
+rta	G1H	#4B26B1
+rta	G1K	#4A27B2
+rta	G1L	#4928B4
+rta	G1S	#492AB5
+rta	G1T	#482BB6
+rta	G1V	#472DB8
+rta	G1W	#462EB9
+rta	G2C	#4530BB
+rta	G3L	#4531BC
+rta	G4R	#4433BE
+rta	G5B	#4334BF
+rta	G5C	#4236C0
+rta	G5L	#4137C2
+rta	G5M	#4038C3
+rta	G5R	#403AC4
+rta	G5Y	#403CC5
+rta	G6K	#403EC6
+rta	G6L	#4040C6
+rta	G6R	#4041C7
+rta	G6W	#3F43C8
+rta	G6X	#3F45C8
+rta	G6Z	#3F47C9
+rta	G7A	#3F49C9
+rta	G7B	#3F4BCA
+rta	G7G	#3F4CCB
+rta	G7H	#3F4ECB
+rta	G7J	#3F50CC
+rta	G8B	#3F52CD
+rta	G8P	#3F54CD
+rta	G8V	#3F56CE
+rta	G8W	#3E57CE
+rta	G8Y	#3E59CF
+rta	G8Z	#3E5BD0
+rta	G9A	#3E5DD0
+rta	G9B	#3F5FD0
+rta	G9C	#3F60D0
+rta	G9N	#3F62CF
+rta	G9P	#4064CF
+rta	G9T	#4065CF
+rta	H1E	#4067CF
+rta	H1G	#4069CF
+rta	H1K	#416ACF
+rta	H1L	#416CCE
+rta	H1M	#416ECE
+rta	H1P	#426FCE
+rta	H1T	#4271CE
+rta	H1W	#4273CE
+rta	H1X	#4375CD
+rta	H1Z	#4376CD
+rta	H2A	#4378CD
+rta	H2B	#437ACD
+rta	H2C	#447BCD
+rta	H2J	#447DCC
+rta	H2K	#457ECB
+rta	H2L	#4580CA
+rta	H2P	#4681CA
+rta	H2R	#4682C9
+rta	H2S	#4784C8
+rta	H2T	#4785C7
+rta	H2V	#4886C6
+rta	H2X	#4888C5
+rta	H3B	#4989C5
+rta	H3C	#4A8AC4
+rta	H3E	#4A8CC3
+rta	H3G	#4B8DC2
+rta	H3H	#4B8EC1
+rta	H3K	#4C90C0
+rta	H3L	#4C91BF
+rta	H3N	#4D92BF
+rta	H3P	#4D94BE
+rta	H3R	#4E95BD
+rta	H3S	#4F96BC
+rta	H3T	#4F97BA
+rta	H3W	#5098B9
+rta	H3X	#5199B8
+rta	H3Y	#519AB7
+rta	H4A	#529BB5
+rta	H4C	#539CB4
+rta	H4E	#549DB3
+rta	H4G	#549EB2
+rta	H4J	#559EB0
+rta	H4L	#569FAF
+rta	H4P	#57A0AE
+rta	H4V	#57A1AD
+rta	H4W	#58A2AB
+rta	H4X	#59A3AA
+rta	H7A	#5AA4A9
+rta	H7B	#5AA5A7
+rta	H7C	#5BA6A6
+rta	H7E	#5CA7A5
+rta	H7L	#5DA8A4
+rta	H7P	#5EA8A2
+rta	H7R	#5FA9A1
+rta	H7S	#5FAA9F
+rta	H7X	#60AA9E
+rta	H8N	#61AB9C
+rta	H8P	#62AB9B
+rta	H8S	#63AC9A
+rta	H8T	#64AD98
+rta	H8Z	#65AD97
+rta	H9C	#66AE95
+rta	H9G	#67AF94
+rta	H9H	#68AF92
+rta	H9R	#69B091
+rta	H9S	#6AB090
+rta	J0A	#6BB18E
+rta	J0B	#6CB28D
+rta	J0E	#6DB28B
+rta	J0G	#6EB38A
+rta	J0H	#6FB389
+rta	J0J	#70B487
+rta	J0K	#71B486
+rta	J0L	#72B485
+rta	J0M	#73B583
+rta	J0N	#74B582
+rta	J0P	#75B680
+rta	J0R	#77B67F
+rta	J0S	#78B67E
+rta	J0T	#79B77C
+rta	J0V	#7AB77B
+rta	J0W	#7BB77A
+rta	J0X	#7CB878
+rta	J0Y	#7DB877
+rta	J0Z	#7EB976
+rta	J1A	#80B974
+rta	J1H	#81B973
+rta	J1N	#82BA72
+rta	J1X	#83BA70
+rta	J1Z	#84BA6F
+rta	J2B	#86BB6E
+rta	J2C	#87BB6D
+rta	J2G	#88BB6C
+rta	J2H	#89BB6B
+rta	J2J	#8BBB6A
+rta	J2K	#8CBB69
+rta	J2L	#8DBC67
+rta	J2N	#8EBC66
+rta	J2S	#90BC65
+rta	J2T	#91BC64
+rta	J2W	#92BC63
+rta	J2X	#94BD62
+rta	J3A	#95BD61
+rta	J3B	#96BD60
+rta	J3E	#97BD5F
+rta	J3G	#99BD5D
+rta	J3H	#9ABD5C
+rta	J3L	#9BBE5B
+rta	J3M	#9CBE5B
+rta	J3N	#9EBE5A
+rta	J3P	#9FBE59
+rta	J3R	#A0BE58
+rta	J3V	#A2BE57
+rta	J3X	#A3BE57
+rta	J3Y	#A4BE56
+rta	J3Z	#A6BE55
+rta	J4B	#A7BE54
+rta	J4G	#A8BD53
+rta	J4H	#AABD52
+rta	J4J	#ABBD52
+rta	J4K	#ACBD51
+rta	J4L	#AEBD50
+rta	J4M	#AFBD4F
+rta	J4N	#B0BD4E
+rta	J4P	#B2BD4E
+rta	J4R	#B3BD4D
+rta	J4S	#B4BD4C
+rta	J4T	#B5BD4C
+rta	J4V	#B7BD4B
+rta	J4W	#B8BC4B
+rta	J4X	#B9BC4A
+rta	J4Y	#BABC4A
+rta	J4Z	#BBBC49
+rta	J5A	#BDBB49
+rta	J5B	#BEBB48
+rta	J5J	#BFBB47
+rta	J5K	#C0BA47
+rta	J5L	#C1BA46
+rta	J5R	#C3BA46
+rta	J5T	#C4BA45
+rta	J5W	#C5B945
+rta	J5Y	#C6B944
+rta	J5Z	#C7B944
+rta	J6A	#C9B843
+rta	J6E	#CAB843
+rta	J6J	#CBB842
+rta	J6K	#CCB742
+rta	J6N	#CDB642
+rta	J6R	#CEB641
+rta	J6S	#CFB541
+rta	J6T	#D0B441
+rta	J6V	#D1B440
+rta	J6W	#D1B340
+rta	J6X	#D2B240
+rta	J6Y	#D3B23F
+rta	J6Z	#D4B13F
+rta	J7A	#D5B03F
+rta	J7B	#D6AF3E
+rta	J7C	#D7AF3E
+rta	J7E	#D8AE3E
+rta	J7G	#D9AD3D
+rta	J7J	#DAAD3D
+rta	J7K	#DBAC3D
+rta	J7L	#DCAB3C
+rta	J7M	#DCAA3C
+rta	J7N	#DDA93C
+rta	J7R	#DDA83C
+rta	J7T	#DEA73B
+rta	J7V	#DEA63B
+rta	J7X	#DFA53B
+rta	J7Y	#DFA33B
+rta	J7Z	#E0A23A
+rta	J8B	#E1A13A
+rta	J8C	#E1A03A
+rta	J8E	#E29F39
+rta	J8H	#E29D39
+rta	J8L	#E39C39
+rta	J8M	#E39B39
+rta	J8N	#E49A38
+rta	J8P	#E49938
+rta	J8R	#E59738
+rta	J8T	#E59638
+rta	J8V	#E69537
+rta	J8X	#E69437
+rta	J8Y	#E69237
+rta	J8Z	#E69036
+rta	J9A	#E68E36
+rta	J9E	#E68D36
+rta	J9H	#E68B35
+rta	J9J	#E68935
+rta	J9L	#E68735
+rta	J9Y	#E68634
+rta	Argentina	#E68434
+rta	Austria	#E68234
+rta	Croatia	#E68033
+rta	Denmark	#E67F33
+rta	Democratic Republic of the Congo	#E67D33
+rta	Ecuador	#E67B32
+rta	Egypt	#E67932
+rta	Georgia	#E67832
+rta	Ghana	#E67631
+rta	Iceland	#E67431
+rta	Iran	#E67231
+rta	Israel	#E67030
+rta	Luxembourg	#E56E30
+rta	Norway	#E56C2F
+rta	Panama	#E5692F
+rta	Peru	#E4672F
+rta	Philippines	#E4652E
+rta	Sri Lanka	#E4632E
+rta	Turkey	#E3612D
+rta	Canada	#E35F2D
+rta	Austria	#E35C2C
+rta	Belgium	#E25A2C
+rta	China	#E2582C
+rta	Croatia	#E2562B
+rta	Denmark	#E1542B
+rta	Finland	#E1522A
+rta	France	#E14F2A
+rta	Georgia	#E04D29
+rta	Germany	#E04B29
+rta	Hong Kong	#E04929
+rta	Iran	#DF4728
+rta	Ireland	#DF4528
+rta	Italy	#DF4227
+rta	Japan	#DF4027
+rta	Kuwait	#DE3E27
+rta	Luxembourg	#DE3C26
+rta	Netherlands	#DE3A26
+rta	Portugal	#DD3726
+rta	Singapore	#DD3525
+rta	South Korea	#DD3325
+rta	Spain	#DD3124
+rta	Switzerland	#DC2F24
+rta	Taiwan	#DC2C24
+rta	United Kingdom	#DC2A23
+rta	USA	#DB2823
+
+rss	01-Bas-Saint-Laurent	#5E1D9D
+rss	02-Saguenay - Lac-Saint-Jean	#551EA5
+rss	03-Capitale-Nationale	#4E21AC
+rss	04-Mauricie et Centre-du-Québec	#4A27B2
+rss	05-Estrie	#472DB8
+rss	06-Montréal	#4333BE
+rss	07-Outaouais	#403AC4
+rss	08-Abitibi-Témiscamingue	#4041C7
+rss	09-Côte-Nord	#3F49CA
+rss	10-Nord-du-Québec	#3F51CC
+rss	11-Gaspésie - Îles-de-la-Madeleine	#3E59CF
+rss	12-Chaudière-Appalaches	#3F60D0
+rss	13-Laval	#4068CF
+rss	14-Lanaudière	#426FCE
+rss	15-Laurentides	#4376CD
+rss	16-Montérégie	#447DCC
+rss	17-Nunavik	#4783C8
+rss	18-Terres-Cries-de-la-Baie-James	#4989C5
+rss	Argentina	#4B8EC1
+rss	Austria	#4E94BD
+rss	Croatia	#5098B8
+rss	Denmark	#549DB3
+rss	Democratic Republic of the Congo	#57A1AD
+rss	Ecuador	#5AA5A8
+rss	Egypt	#5DA8A2
+rss	Georgia	#61AB9C
+rss	Ghana	#65AE96
+rss	Iceland	#69B090
+rss	Iran	#6DB38A
+rss	Israel	#72B584
+rss	Luxembourg	#77B67E
+rss	Norway	#7CB879
+rss	Panama	#81B973
+rss	Peru	#86BB6E
+rss	Philippines	#8BBB69
+rss	Sri Lanka	#91BC64
+rss	Turkey	#96BD5F
+rss	Canada	#9CBE5B
+rss	Austria	#A1BE57
+rss	Belgium	#A7BE54
+rss	China	#ADBD51
+rss	Croatia	#B2BD4D
+rss	Denmark	#B8BC4B
+rss	Finland	#BDBB48
+rss	France	#C2BA46
+rss	Georgia	#C7B944
+rss	Germany	#CCB742
+rss	Grand Princess	#D0B441
+rss	Hong Kong	#D4B13F
+rss	Iran	#D8AE3E
+rss	Ireland	#DCAB3C
+rss	Italy	#DEA63B
+rss	Japan	#E0A13A
+rss	Kuwait	#E39C39
+rss	Luxembourg	#E59738
+rss	Massachusetts	#E69136
+rss	Netherlands	#E68935
+rss	New Brunswick	#E68234
+rss	New Hampshire	#E67A32
+rss	Ontario	#E67331
+rss	Portugal	#E5692F
+rss	Singapore	#E3602D
+rss	South Korea	#E2572B
+rss	Spain	#E04E29
+rss	Switzerland	#DF4428
+rss	Taiwan	#DE3B26
+rss	United Kingdom	#DD3124
+rss	USA	#DB2823
+
+division	Aargau	#5E1D9D
+division	Abruzzo	#5D1D9E
+division	Afyon	#5C1D9F
+division	Aichi	#5A1DA0
+division	Aksaray	#591DA1
+division	Alagoas	#581EA2
+division	Alken	#571EA3
+division	Amazonas State	#551EA4
+division	Andalusia	#541EA5
+division	Andenne	#531EA6
+division	Anderlecht	#521EA7
+division	Anhui	#501EA9
+division	Ankara	#4F1EAA
+division	Antioquia	#4F1FAA
+division	Antwerp	#4E20AB
+division	Arizona	#4E21AC
+division	Asse	#4D21AD
+division	Ath	#4D22AE
+division	Athens	#4C23AE
+division	Auckland	#4C24AF
+division	Austria	#4B25B0
+division	Auvergne Rhone Alpes	#4B26B1
+division	Auvergne-Rhône-Alpes	#4B27B2
+division	Baden-Wuerttemberg	#4A27B3
+division	Bahia	#4A28B3
+division	Balikesir	#4929B4
+division	Bangkok	#492AB5
+division	Baranya	#482BB6
+division	Barcelona	#482CB7
+division	Basel	#472CB7
+division	Basel-Stadt	#472DB8
+division	Basque Country	#462EB9
+division	Bavaria	#462FBA
+division	Beersel	#4530BB
+division	Beijing	#4531BB
+division	Belgium	#4431BC
+division	Beringen	#4432BD
+division	Berloz	#4433BE
+division	Bern	#4334BF
+division	Bierbeek	#4335C0
+division	Blegny	#4236C0
+division	Blida	#4236C1
+division	Bogota	#4137C2
+division	Bonheiden	#4138C3
+division	Boufarik	#4039C4
+division	Bourgogne-France-Comté	#403AC4
+division	Boussu	#403BC5
+division	Boutersem	#403CC5
+division	Braine-l alleud	#403DC5
+division	Bratislava	#403EC6
+division	Bree	#403FC6
+division	Bretagne	#4040C6
+division	British Columbia	#4041C7
+division	Brussels	#4042C7
+division	Buryat Republic	#3F43C8
+division	California	#3F44C8
+division	Canakkale	#3F45C8
+division	Canary Islands	#3F47C9
+division	Castel di Sangro	#3F48C9
+division	Castilla La Mancha	#3F49C9
+division	Castilla y Leon	#3F4ACA
+division	Catalunya	#3F4BCA
+division	Central Hungary	#3F4CCA
+division	Centre-Val de Loire	#3F4DCB
+division	Chaineux	#3F4ECB
+division	Charleroi	#3F4FCC
+division	Chechen Republic	#3F50CC
+division	Chelyabinsk Region	#3F51CC
+division	Chiba	#3F52CD
+division	Chihuahua	#3F53CD
+division	China	#3F54CD
+division	Chongqing	#3F55CE
+division	Chungcheongnam	#3F56CE
+division	Comunitat Valenciana	#3E57CE
+division	Colfontaine	#3E58CF
+division	Connecticut	#3E5ACF
+division	Copenhagen	#3E5BD0
+division	Cork	#3E5CD0
+division	Courcelles	#3E5DD0
+division	Couthuin	#3F5ED0
+division	Couvin	#3F5FD0
+division	Dakar	#3F60D0
+division	Dalhem	#3F61D0
+division	Deinze	#3F61D0
+division	Dendermonde	#3F62CF
+division	Denmark	#4063CF
+division	Diamond Princess	#4064CF
+division	Dilbeek	#4065CF
+division	District of Columbia	#4066CF
+division	Distrito Federal	#4067CF
+division	Doha	#4068CF
+division	Doornik	#4169CF
+division	Drenthe	#416ACF
+division	Dublin	#416BCE
+division	Duesseldorf	#416CCE
+division	Ellezelles	#416DCE
+division	Elsene	#416ECE
+division	England	#426FCE
+division	Estado de Mexico	#4270CE
+division	Eupen	#4271CE
+division	Eskisehir	#4272CE
+division	Espirito Santo	#4273CE
+division	Estinnes	#4274CE
+division	Etterbeek	#4375CD
+division	Finland	#4376CD
+division	Flanders	#4377CD
+division	Flevoland	#4378CD
+division	Florida	#4379CD
+division	Fontaine-l Eveque	#437ACD
+division	Frameries	#447BCD
+division	Friesland	#447CCD
+division	Friuli Venezia Giulia	#447DCC
+division	Fujian	#447DCC
+division	Galicia	#457ECB
+division	Ganshoren	#457FCB
+division	Gavleborgs lan	#4580CA
+division	Gelderland	#4680CA
+division	Genappe	#4681C9
+division	Geneva	#4682C9
+division	Gent	#4783C8
+division	Georgia	#4784C8
+division	Geraardsbergen	#4784C7
+division	Ghent	#4785C7
+division	Gierle	#4886C6
+division	Gilgit Baltistan	#4887C6
+division	Goiais	#4887C5
+division	Grand Est	#4988C5
+division	Grand Princess	#4989C4
+division	Graubünden	#498AC4
+division	Greater Accra	#4A8AC4
+division	Grimbergen	#4A8BC3
+division	Guangdong	#4A8CC3
+division	Gujarat	#4B8DC2
+division	Gyeonggi	#4B8EC2
+division	Halland	#4B8EC1
+division	Hangzhou	#4B8FC1
+division	Hasselt	#4C90C0
+division	Hauts de France	#4C91C0
+division	Havelange	#4C91BF
+division	Hawaii	#4D92BF
+division	Helsinki	#4D93BE
+division	Hemiksem	#4D94BE
+division	Henan	#4E94BD
+division	Henri-chapelle	#4E95BD
+division	Herent	#4E96BC
+division	Herselt	#4F96BB
+division	Herstal	#4F97BB
+division	Herve	#5097BA
+division	Holsbeek	#5098B9
+division	Ho Chi Minh City	#5099B8
+division	Hoegaarden	#5199B8
+division	Hong Kong	#519AB7
+division	Honnelles	#529AB6
+division	Houthalen-Helchteren	#529BB5
+division	Hubei	#539BB5
+division	Huldenberg	#539CB4
+division	Idaho	#539CB3
+division	Illinois	#549DB2
+division	Indiana	#549DB2
+division	Iowa	#559EB1
+division	Iran	#559FB0
+division	Ishikawa	#569FB0
+division	Istanbul	#56A0AF
+division	Japan	#56A0AE
+division	Jiangsu	#57A1AD
+division	Jiangxi	#57A1AD
+division	Kalmthout	#58A2AC
+division	Kanagawa	#58A2AB
+division	Kansas	#59A3AA
+division	Karaman	#59A3AA
+division	Karnataka	#59A4A9
+division	Kastamonu	#5AA5A8
+division	Kasterlee	#5AA5A8
+division	Kathmandu	#5BA6A7
+division	Kaulile	#5BA6A6
+division	Kayseri	#5CA7A5
+division	Keelung	#5CA7A5
+division	Kerala	#5CA8A4
+division	Kessel-Lo	#5DA8A3
+division	Khabarovsk Region	#5EA8A2
+division	Khyber Pakhtunkhwa	#5EA9A1
+division	Kinshasa	#5FA9A1
+division	Kochi	#5FA9A0
+division	Knokke-Heist	#60AA9F
+division	Kocaeli	#60AA9E
+division	Komen	#61AA9D
+division	Konya	#61AB9C
+division	Kosice	#62AB9C
+division	Kostoliste	#62AC9B
+division	Kraainem	#63AC9A
+division	Krasnodar Region	#63AC99
+division	Krasnoyarsk Region	#64AD98
+division	Kuala Lumpur	#65AD98
+division	Kuwait	#65AD97
+division	KwaZulu-Natal	#66AE96
+division	Kyoto	#66AE95
+division	La Louviere	#67AE94
+division	La Rioja	#67AF93
+division	Lagos	#68AF93
+division	Lanaken	#68AF92
+division	Lasne	#69B091
+division	Lazio	#69B090
+division	Leuven	#6AB18F
+division	Liège	#6AB18F
+division	Lima	#6BB18E
+division	Limburg	#6CB28D
+division	Limerick	#6CB28C
+division	Linter	#6DB28B
+division	Lipetsk Region	#6DB38A
+division	Lisbon	#6EB38A
+division	Lombardy	#6EB389
+division	Louisiana	#6FB388
+division	Louth	#70B487
+division	Lubbeek	#70B487
+division	Lucerne	#71B486
+division	Lummen	#72B485
+division	Luxembourg	#72B584
+division	Madrid	#73B583
+division	Malopolskie	#74B583
+division	Manitoba	#74B582
+division	Marche	#75B581
+division	Martin	#76B680
+division	Maryland	#76B680
+division	Massachusetts	#77B67F
+division	Mbour	#77B67E
+division	Merelbeke	#78B77D
+division	Mexico City	#79B77C
+division	Michigan	#79B77C
+division	Minas Gerais	#7AB77B
+division	Minnesota	#7BB77A
+division	Missouri	#7BB879
+division	Mons	#7CB879
+division	Montevideo	#7DB878
+division	Montigny-le-Tilleul	#7DB877
+division	Moscow	#7EB876
+division	Moscow Region	#7FB975
+division	Mouscron	#7FB975
+division	Munich	#80B974
+division	Namur	#81B973
+division	Nara	#81BA72
+division	Nebraska	#82BA72
+division	Netherlands	#83BA71
+division	Nevada	#83BA70
+division	Nevele	#84BA6F
+division	Nevsehir	#85BA6F
+division	New Brunswick	#85BA6E
+division	New Jersey	#86BB6E
+division	New Hampshire	#87BB6D
+division	New South Wales	#88BB6C
+division	New Taipei City	#88BB6C
+division	Newfoundland and Labrador	#89BB6B
+division	Nieuwerkerken	#8ABB6A
+division	Nonthaburi	#8BBB6A
+division	Normandie	#8BBB69
+division	Normandie	#8CBB68
+division	Norrbotten	#8DBC68
+division	North Brabant	#8DBC67
+division	North Carolina	#8EBC67
+division	North Holland	#8FBC66
+division	North Rhine Westphalia	#90BC65
+division	Northern Territory	#90BC65
+division	Northern Ireland	#91BC64
+division	Nottinghamshire	#92BC63
+division	Nova Scotia	#93BC63
+division	Novosibirsk Region	#93BD62
+division	Oevel	#94BD61
+division	Ohio	#95BD61
+division	Omsk Region	#95BD60
+division	Ontario	#96BD60
+division	Oostrozebeke	#97BD5F
+division	Orebro lan	#98BD5E
+division	Oregon	#98BD5E
+division	Orenburg Region	#99BD5D
+division	Osaka	#9ABD5C
+division	Oslo	#9BBE5C
+division	Ostergotland	#9BBE5B
+division	Otago	#9CBE5B
+division	Oudergem	#9DBE5A
+division	Overijssel	#9EBE5A
+division	Panama City	#9EBE59
+division	Pays de la Loire	#9FBE59
+division	Pelt	#A0BE58
+division	Pennsylvania	#A1BE58
+division	Perm Region	#A1BE57
+division	Pichincha	#A2BE57
+division	Pomorskie	#A3BE57
+division	Portugal	#A4BE56
+division	Primorskiy Region	#A4BE56
+division	Pskov Region	#A5BE55
+division	Puebla	#A6BE55
+division	Prague	#A7BE54
+division	Quangning	#A7BE54
+division	Quaregnon	#A8BD53
+division	Queretaro	#A9BD53
+division	Queensland	#AABD52
+division	Quevy	#AABD52
+division	Quito	#ABBD51
+division	Ramat Gan	#ACBD51
+division	Ravels	#ADBD51
+division	Red River Delta	#AEBD50
+division	Republic of Buryatia	#AEBD50
+division	Republic of Crymea	#AFBD4F
+division	Republic of Kabardino-Balkaria	#B0BD4F
+division	Republic of Sakha	#B1BD4E
+division	Reykjavik	#B1BD4E
+division	Rhode Island	#B2BD4D
+division	Riemst	#B3BD4D
+division	Rio de Janeiro	#B4BD4C
+division	Rio Grande do Sul	#B4BD4C
+division	Rixensart	#B5BD4C
+division	Riyadh	#B6BD4B
+division	Rome	#B6BD4B
+division	Ronse	#B7BD4B
+division	Saint-Ghislain	#B8BC4B
+division	Saint-Petersburg	#B8BC4A
+division	Saitama	#B9BC4A
+division	Sakarya	#BABC4A
+division	Sakhalin Region	#BBBC49
+division	Samara Region	#BBBC49
+division	Santa Catarina	#BCBB49
+division	Santiago	#BDBB48
+division	Sao Paulo	#BDBB48
+division	Saskatchewan	#BEBB48
+division	Schwyz	#BFBB48
+division	Scotland	#BFBB47
+division	Selangor	#C0BA47
+division	Seoul	#C1BA47
+division	Seraing	#C1BA46
+division	Schoten	#C2BA46
+division	Shandong	#C3BA46
+division	Shanghai	#C4BA46
+division	Sichuan	#C4B945
+division	Sihanoukville	#C5B945
+division	Siirt	#C6B945
+division	Silly	#C6B944
+division	Singapore	#C7B944
+division	Sint-Agatha-Berchem	#C8B944
+division	Sint-Genesius-Rode	#C8B843
+division	Sint-Gillis-Waas	#C9B843
+division	Sint-Niklaas	#CAB843
+division	Sint-Pieters-Woluwe	#CBB843
+division	Sint-Truiden	#CBB842
+division	Småland	#CCB742
+division	Soignies	#CCB742
+division	Sormland	#CDB642
+division	Soumagne	#CDB642
+division	South Carolina	#CEB641
+division	South Holland	#CEB541
+division	South Korea	#CFB541
+division	St-Louis	#CFB441
+division	Stekene	#D0B441
+division	Stockholm	#D0B440
+division	Sud Kivu	#D1B340
+division	Sverdlovsk Region	#D2B340
+division	Taipei	#D2B240
+division	Taiwan	#D3B240
+division	Talca	#D3B240
+division	Taoyuan	#D4B13F
+division	Tatarstan	#D4B13F
+division	Tbilisi	#D5B13F
+division	Teramo	#D5B03F
+division	Tervuren	#D6B03F
+division	Texas	#D6AF3E
+division	Thanh Hoa	#D7AF3E
+division	Theux	#D7AF3E
+division	Thies	#D8AE3E
+division	Ticino	#D8AE3E
+division	Tielt-Winge	#D9AD3D
+division	Tienen	#DAAD3D
+division	Tipperary	#DAAD3D
+division	Tokyo	#DBAC3D
+division	Touba	#DBAC3D
+division	Tournai	#DCAB3D
+division	Tubize	#DCAB3C
+division	Tver Region	#DDAA3C
+division	Ukkel	#DDAA3C
+division	USA	#DDA93C
+division	Usti nad Labem	#DDA83C
+division	Utah	#DEA83C
+division	Utrecht	#DEA73B
+division	Vasterbotten	#DEA63B
+division	Varmland	#DFA63B
+division	Vaud	#DFA53B
+division	Veneto	#DFA43B
+division	Victoria	#DFA33B
+division	Vienna	#E0A33A
+division	Vilvoorde	#E0A23A
+division	Vinhphuc	#E0A13A
+division	Virginia	#E1A13A
+division	Vorst	#E1A03A
+division	Waasmunster	#E19F3A
+division	Wales	#E19F3A
+division	Walloon Brabant	#E29E39
+division	Wanze	#E29D39
+division	Waterloo	#E29D39
+division	Watermaal-Bosvoorde	#E39C39
+division	Washington	#E39B39
+division	Wellington	#E39B39
+division	Wervik	#E39A38
+division	West Coast Region	#E49938
+division	Western Australia	#E49938
+division	Wevelgem	#E49838
+division	Wicklow	#E59738
+division	Wisconsin	#E59738
+division	Wyoming	#E59637
+division	Yunnan	#E69537
+division	Zhejiang	#E69437
+division	Zielonogorskie	#E69337
+division	Zinnik	#E69237
+division	Zolder	#E69137
+division	Zonhoven	#E69036
+division	Zoutleeuw	#E68F36
+division	Zurich	#E68E36
+division	British Columbia	#E68D36
+division	Manitoba	#E68C36
+division	New Brunswick	#E68B35
+division	Newfoundland and Labrador	#E68A35
+division	Nova Scotia	#E68935
+division	Ontario	#E68835
+division	Quebec	#E68735
+division	Saskatchewan	#E68635
+division	Argentina	#E68534
+division	Austria	#E68434
+division	Denmark	#E68334
+division	Democratic Republic of the Congo	#E68234
+division	Egypt	#E68134
+division	England	#E68033
+division	Georgia	#E67F33
+division	Iran	#E67E33
+division	Luxembourg	#E67D33
+division	Norway	#E67C33
+division	Philippines	#E67B32
+division	Sri Lanka	#E67A32
+division	Turkey	#E67932
+division	Aargau	#E67832
+division	Abruzzo	#E67732
+division	Afyon	#E67631
+division	Aichi	#E67531
+division	Aksaray	#E67431
+division	Alagoas	#E67331
+division	Alken	#E67231
+division	Amazonas State	#E67130
+division	Andalusia	#E67030
+division	Andenne	#E56E30
+division	Anderlecht	#E56D30
+division	Anhui	#E56C2F
+division	Ankara	#E56B2F
+division	Antioquia	#E5692F
+division	Antwerp	#E4682F
+division	Arizona	#E4672E
+division	Asse	#E4662E
+division	Ath	#E4642E
+division	Athens	#E4632E
+division	Auckland	#E3622D
+division	Austria	#E3612D
+division	Auvergne Rhone Alpes	#E35F2D
+division	Auvergne-Rhône-Alpes	#E35E2D
+division	Baden-Wuerttemberg	#E35D2C
+division	Bahia	#E25C2C
+division	Balikesir	#E25A2C
+division	Bangkok	#E2592C
+division	Baranya	#E2582B
+division	Barcelona	#E2572B
+division	Basel	#E2552B
+division	Basel-Stadt	#E1542B
+division	Basque Country	#E1532A
+division	Bavaria	#E1522A
+division	Beersel	#E1502A
+division	Beijing	#E14F2A
+division	Belgium	#E04E2A
+division	Beringen	#E04D29
+division	Berloz	#E04B29
+division	Bern	#E04A29
+division	Bierbeek	#E04929
+division	Blegny	#E04828
+division	Blida	#DF4628
+division	Bogota	#DF4528
+division	Bonheiden	#DF4428
+division	Boufarik	#DF4227
+division	Bourgogne-France-Comté	#DF4127
+division	Boussu	#DF4027
+division	Boutersem	#DE3F27
+division	Braine-l alleud	#DE3D27
+division	Bratislava	#DE3C26
+division	Bree	#DE3B26
+division	Bretagne	#DE3A26
+division	British Columbia	#DE3826
+division	Brussels	#DD3725
+division	Buryat Republic	#DD3625
+division	California	#DD3525
+division	Canakkale	#DD3325
+division	Canary Islands	#DD3225
+division	Castel di Sangro	#DD3124
+division	Castilla La Mancha	#DC3024
+division	Castilla y Leon	#DC2E24
+division	Catalunya	#DC2D24
+division	Central Hungary	#DC2C24
+division	Centre-Val de Loire	#DC2B23
+division	Chaineux	#DC2923
+division	Charleroi	#DB2823
+division	Chechen Republic	#5E1D9D
+division	Chelyabinsk Region	#5C1D9E
+division	Chiba	#5A1DA0
+division	Chihuahua	#591DA1
+division	China	#571EA3
+division	Chongqing	#551EA4
+division	Chungcheongnam	#531EA6
+division	Comunitat Valenciana	#521EA8
+division	Colfontaine	#501EA9
+division	Connecticut	#4F1FAA
+division	Copenhagen	#4E20AC
+division	Cork	#4D21AD
+division	Courcelles	#4D23AE
+division	Couthuin	#4C24AF
+division	Couvin	#4B25B0
+division	Dakar	#4B26B1
+division	Dalhem	#4A27B3
+division	Deinze	#4929B4
+division	Dendermonde	#492AB5
+division	Denmark	#482BB6
+division	Diamond Princess	#472CB7
+division	Dilbeek	#472DB8
+division	District of Columbia	#462FBA
+division	Distrito Federal	#4530BB
+division	Doha	#4531BC
+division	Doornik	#4432BD
+division	Drenthe	#4333BE
+division	Dublin	#4335BF
+division	Duesseldorf	#4236C1
+division	Ellezelles	#4137C2
+division	Elsene	#4138C3
+division	England	#4039C4
+division	Estado de Mexico	#403BC5
+division	Eupen	#403CC5
+division	Eskisehir	#403EC6
+division	Espirito Santo	#403FC6
+division	Estinnes	#4041C7
+division	Etterbeek	#3F43C7
+division	Finland	#3F44C8
+division	Flanders	#3F46C8
+division	Flevoland	#3F47C9
+division	Florida	#3F49C9
+division	Fontaine-l Eveque	#3F4ACA
+division	Frameries	#3F4CCA
+division	Friesland	#3F4DCB
+division	Friuli Venezia Giulia	#3F4FCB
+division	Fujian	#3F50CC
+division	Galicia	#3F52CC
+division	Ganshoren	#3F53CD
+division	Gavleborgs lan	#3F55CE
+division	Gelderland	#3F56CE
+division	Genappe	#3E58CF
+division	Geneva	#3E59CF
+division	Gent	#3E5BD0
+division	Georgia	#3E5CD0
+division	Geraardsbergen	#3F5ED0
+division	Ghent	#3F5FD0
+division	Gierle	#3F60D0
+division	Gilgit Baltistan	#3F62CF
+division	Goiais	#4063CF
+division	Grand Est	#4065CF
+division	Grand Princess	#4066CF
+division	Graubünden	#4067CF
+division	Greater Accra	#4069CF
+division	Grimbergen	#416ACF
+division	Guangdong	#416CCE
+division	Gujarat	#416DCE
+division	Gyeonggi	#416FCE
+division	Halland	#4270CE
+division	Hangzhou	#4271CE
+division	Hasselt	#4273CE
+division	Hauts de France	#4274CE
+division	Havelange	#4376CD
+division	Hawaii	#4377CD
+division	Helsinki	#4378CD
+division	Hemiksem	#437ACD
+division	Henan	#447BCD
+division	Henri-chapelle	#447CCC
+division	Herent	#447ECC
+division	Herselt	#457FCB
+division	Herstal	#4580CA
+division	Herve	#4681CA
+division	Holsbeek	#4682C9
+division	Ho Chi Minh City	#4783C8
+division	Hoegaarden	#4784C8
+division	Hong Kong	#4885C7
+division	Honnelles	#4886C6
+division	Houthalen-Helchteren	#4887C5
+division	Hubei	#4989C5
+division	Huldenberg	#498AC4
+division	Idaho	#4A8BC3
+division	Illinois	#4A8CC3
+division	Indiana	#4B8DC2
+division	Iowa	#4B8EC1
+division	Iran	#4C8FC1
+division	Ishikawa	#4C90C0
+division	Istanbul	#4C91BF
+division	Japan	#4D93BE
+division	Jiangsu	#4D94BE
+division	Jiangxi	#4E95BD
+division	Kalmthout	#4E96BC
+division	Kanagawa	#4F96BB
+division	Kansas	#5097BA
+division	Karaman	#5098B9
+division	Karnataka	#5199B8
+division	Kastamonu	#519AB7
+division	Kasterlee	#529AB6
+division	Kathmandu	#539BB5
+division	Kaulile	#539CB4
+division	Kayseri	#549DB3
+division	Keelung	#549EB2
+division	Kerala	#559EB1
+division	Kessel-Lo	#569FB0
+division	Khabarovsk Region	#56A0AE
+division	Khyber Pakhtunkhwa	#57A1AD
+division	Kinshasa	#57A1AC
+division	Kochi	#58A2AB
+division	Knokke-Heist	#59A3AA
+division	Kocaeli	#59A4A9
+division	Komen	#5AA5A8
+division	Konya	#5AA5A7
+division	Kosice	#5BA6A6
+division	Kostoliste	#5CA7A5
+division	Kraainem	#5CA8A4
+division	Krasnodar Region	#5DA8A3
+division	Krasnoyarsk Region	#5EA9A2
+division	Kuala Lumpur	#5FA9A0
+division	Kuwait	#60AA9F
+division	KwaZulu-Natal	#60AA9E
+division	Kyoto	#61AB9D
+division	La Louviere	#62AB9C
+division	La Rioja	#63AC9A
+division	Lagos	#63AC99
+division	Lanaken	#64AD98
+division	Lasne	#65AD97
+division	Lazio	#66AE96
+division	Leuven	#66AE95
+division	Liège	#67AF93
+division	Lima	#68AF92
+division	Limburg	#69B091
+division	Limerick	#6AB090
+division	Linter	#6AB18F
+division	Lipetsk Region	#6BB18E
+division	Lisbon	#6CB28C
+division	Lombardy	#6DB28B
+division	Louisiana	#6DB38A
+division	Louth	#6EB389
+division	Lubbeek	#6FB488
+division	Lucerne	#70B487
+division	Lummen	#71B486
+division	Luxembourg	#72B484
+division	Madrid	#73B583
+division	Malopolskie	#74B582
+division	Manitoba	#75B581
+division	Marche	#76B680
+division	Martin	#77B67F
+division	Maryland	#78B67E
+division	Massachusetts	#79B77D
+division	Mbour	#7AB77C
+division	Merelbeke	#7AB77A
+division	Mexico City	#7BB879
+division	Michigan	#7CB878
+division	Minas Gerais	#7DB877
+division	Minnesota	#7EB976
+division	Missouri	#7FB975
+division	Mons	#80B974
+division	Montevideo	#81B973
+division	Montigny-le-Tilleul	#82BA72
+division	Moscow	#83BA70
+division	Moscow Region	#84BA6F
+division	Mouscron	#85BA6F
+division	Munich	#86BB6E
+division	Namur	#87BB6D
+division	Nara	#88BB6C
+division	Nebraska	#89BB6B
+division	Netherlands	#8ABB6A
+division	Nevada	#8BBB69
+division	Nevele	#8CBC68
+division	Nevsehir	#8DBC67
+division	New Brunswick	#8EBC66
+division	New Jersey	#90BC65
+division	New Hampshire	#91BC64
+division	New South Wales	#92BC64
+division	New Taipei City	#93BC63
+division	Newfoundland and Labrador	#94BD62
+division	Nieuwerkerken	#95BD61
+division	Nonthaburi	#96BD60
+division	Normandie	#97BD5F
+division	Normandie	#98BD5E
+division	Norrbotten	#99BD5D
+division	North Brabant	#9ABE5C
+division	North Carolina	#9BBE5B
+division	North Holland	#9CBE5B
+division	North Rhine Westphalia	#9DBE5A
+division	Northern Territory	#9EBE59
+division	Northern Ireland	#9FBE59
+division	Nottinghamshire	#A1BE58
+division	Nova Scotia	#A2BE57
+division	Novosibirsk Region	#A3BE57
+division	Oevel	#A4BE56
+division	Ohio	#A5BE55
+division	Omsk Region	#A6BE55
+division	Ontario	#A7BE54
+division	Oostrozebeke	#A8BD53
+division	Orebro lan	#A9BD53
+division	Oregon	#AABD52
+division	Orenburg Region	#ABBD51
+division	Osaka	#ADBD51
+division	Oslo	#AEBD50
+division	Ostergotland	#AFBD4F
+division	Otago	#B0BD4F
+division	Oudergem	#B1BD4E
+division	Overijssel	#B2BD4D
+division	Panama City	#B3BD4D
+division	Pays de la Loire	#B4BD4C
+division	Pelt	#B5BD4C
+division	Pennsylvania	#B6BD4B
+division	Perm Region	#B7BD4B
+division	Pichincha	#B8BC4A
+division	Pomorskie	#B9BC4A
+division	Portugal	#BABC4A
+division	Primorskiy Region	#BBBC49
+division	Pskov Region	#BCBB49
+division	Puebla	#BDBB48
+division	Prague	#BEBB48
+division	Quangning	#BFBB47
+division	Quaregnon	#C0BA47
+division	Queretaro	#C1BA47
+division	Queensland	#C2BA46
+division	Quevy	#C3BA46
+division	Quito	#C4B945
+division	Ramat Gan	#C5B945
+division	Ravels	#C6B944
+division	Red River Delta	#C7B944
+division	Republic of Buryatia	#C8B844
+division	Republic of Crymea	#C9B843
+division	Republic of Kabardino-Balkaria	#CAB843
+division	Republic of Sakha	#CBB842
+division	Reykjavik	#CCB742
+division	Rhode Island	#CDB642
+division	Riemst	#CDB642
+division	Rio de Janeiro	#CEB541
+division	Rio Grande do Sul	#CFB541
+division	Rixensart	#D0B441
+division	Riyadh	#D0B440
+division	Rome	#D1B340
+division	Ronse	#D2B340
+division	Saint-Ghislain	#D3B240
+division	Saint-Petersburg	#D3B13F
+division	Saitama	#D4B13F
+division	Sakarya	#D5B03F
+division	Sakhalin Region	#D6B03F
+division	Samara Region	#D7AF3E
+division	Santa Catarina	#D7AF3E
+division	Santiago	#D8AE3E
+division	Sao Paulo	#D9AD3D
+division	Saskatchewan	#DAAD3D
+division	Schwyz	#DAAC3D
+division	Scotland	#DBAC3D
+division	Selangor	#DCAB3C
+division	Seoul	#DCAA3C
+division	Seraing	#DDA93C
+division	Schoten	#DDA83C
+division	Shandong	#DEA73C
+division	Shanghai	#DEA63B
+division	Sichuan	#DFA53B
+division	Sihanoukville	#DFA53B
+division	Siirt	#DFA43B
+division	Silly	#E0A33A
+division	Singapore	#E0A23A
+division	Sint-Agatha-Berchem	#E1A13A
+division	Sint-Genesius-Rode	#E1A03A
+division	Sint-Gillis-Waas	#E29F39
+division	Sint-Niklaas	#E29E39
+division	Sint-Pieters-Woluwe	#E29D39
+division	Sint-Truiden	#E39C39
+division	Småland	#E39B39
+division	Soignies	#E49A38
+division	Sormland	#E49938
+division	Soumagne	#E49838
+division	South Carolina	#E59738
+division	South Holland	#E59637
+division	South Korea	#E69537
+division	St-Louis	#E69337
+division	Stekene	#E69237
+division	Stockholm	#E69136
+division	Sud Kivu	#E68F36
+division	Sverdlovsk Region	#E68E36
+division	Taipei	#E68C36
+division	Taiwan	#E68B35
+division	Talca	#E68935
+division	Taoyuan	#E68835
+division	Tatarstan	#E68635
+division	Tbilisi	#E68534
+division	Teramo	#E68434
+division	Tervuren	#E68234
+division	Texas	#E68133
+division	Thanh Hoa	#E67F33
+division	Theux	#E67E33
+division	Thies	#E67C33
+division	Ticino	#E67B32
+division	Tielt-Winge	#E67A32
+division	Tienen	#E67832
+division	Tipperary	#E67732
+division	Tokyo	#E67531
+division	Touba	#E67431
+division	Tournai	#E67231
+division	Tubize	#E67030
+division	Tver Region	#E56E30
+division	Ukkel	#E56D30
+division	USA	#E56B2F
+division	Usti nad Labem	#E5692F
+division	Utah	#E4672E
+division	Utrecht	#E4652E
+division	Vasterbotten	#E4642E
+division	Varmland	#E3622D
+division	Vaud	#E3602D
+division	Veneto	#E35E2D
+division	Victoria	#E35C2C
+division	Vienna	#E25B2C
+division	Vilvoorde	#E2592C
+division	Vinhphuc	#E2572B
+division	Virginia	#E2552B
+division	Vorst	#E1532B
+division	Waasmunster	#E1522A
+division	Wales	#E1502A
+division	Walloon Brabant	#E04E2A
+division	Wanze	#E04C29
+division	Waterloo	#E04A29
+division	Watermaal-Bosvoorde	#E04929
+division	Washington	#DF4728
+division	Wellington	#DF4528
+division	Wervik	#DF4328
+division	West Coast Region	#DF4127
+division	Western Australia	#DE4027
+division	Wevelgem	#DE3E27
+division	Wicklow	#DE3C26
+division	Wisconsin	#DE3A26
+division	Wyoming	#DE3826
+division	Yunnan	#DD3725
+division	Zhejiang	#DD3525
+division	Zielonogorskie	#DD3325
+division	Zinnik	#DD3124
+division	Zolder	#DC2F24
+division	Zonhoven	#DC2D24
+division	Zoutleeuw	#DC2C23
+division	Zurich	#DC2A23
+
+country	Canada	#5E1D9D
+country	Argentina	#501EA9
+country	USA	#4A27B2
+country	Austria	#4531BB
+country	Croatia	#403AC4
+country	Denmark	#3F46C9
+country	Democratic Republic of the Congo	#3F52CD
+country	Ecuador	#3F5ED0
+country	Egypt	#4169CF
+country	Georgia	#4274CE
+country	Ghana	#457ECB
+country	Iceland	#4887C6
+country	Iran	#4C90C0
+country	Israel	#5098B9
+country	Luxembourg	#559EB1
+country	Norway	#59A4A9
+country	Panama	#5FA9A0
+country	Peru	#65AD97
+country	Philippines	#6BB18E
+country	Sri Lanka	#72B485
+country	Turkey	#79B77C
+country	Austria	#81B973
+country	Belgium	#89BB6B
+country	China	#91BC64
+country	Croatia	#99BD5D
+country	Denmark	#A2BE57
+country	Finland	#AABD52
+country	France	#B3BD4D
+country	Georgia	#BBBC49
+country	Germany	#C3BA46
+country	Hong Kong	#CBB842
+country	Iran	#D1B340
+country	Ireland	#D7AF3E
+country	Italy	#DDAA3C
+country	Japan	#E0A23A
+country	Kuwait	#E39B39
+country	Luxembourg	#E69237
+country	Netherlands	#E68735
+country	Portugal	#E67B32
+country	Singapore	#E66F30
+country	South Korea	#E3612D
+country	Spain	#E1532B
+country	Switzerland	#DF4528
+country	Taiwan	#DD3625
+country	United Kingdom	#DB2823
+
