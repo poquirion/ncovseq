@@ -2427,7 +2427,6 @@ division	Europe
 division	North America
 division	Oceania
 division	South America
-	
 country	Canada
 country	Argentina
 country	USA
@@ -2941,3 +2940,527 @@ country	Europe
 country	North America
 country	Oceania
 country	South America
+province	Alberta
+province	British
+province	Manitoba
+province	Newfoundland and Labrador
+province	Northwest Territory 
+province	Nova Scotia
+province	Ontario
+province	Prince Edward Island
+province	Quebec
+province	Saskatchewan
+province	Yukon
+province	Canada
+province	Argentina
+province	USA
+province	Asia
+province	Austria
+province	Croatia
+province	Denmark
+province	Democratic Republic of the Congo
+province	Ecuador
+province	Egypt
+province	England
+province	Georgia
+province	Ghana
+province	Iceland
+province	Iran
+province	Israel
+province	Luxembourg
+province	Norway
+province	Panama
+province	Peru
+province	Brazil
+province	Philippines
+province	Sri Lanka
+province	Turkey
+province	Africa
+province	Europe
+province	North America
+province	Oceania
+province	South America
+province	inde
+province	états-unis
+province	dominique
+province	rép. dominicaine
+province	suisse
+province	royaume-uni
+province	cuba
+province	australie
+province	puerto rico
+province	émirat arabes unis
+province	martinique
+province	guadeloupe
+province	mexique
+province	costa rica
+province	colombie
+province	jamaìque
+province	cameroun
+province	thailande
+province	afrique du sud
+province	haiti
+province	iles vierges (é-u)
+province	guatemala
+province	nouvelle-zélande
+province	indonésie
+province	aruba
+province	pologne
+province	republique tchèque
+province	iles turques-caiques
+province	zimbabwe
+province	jordanie
+province	argentine
+province	sénégal
+province	iraq
+province	algerie
+province	maroc
+province	cambodge
+province	Aargau
+province	Aatalunya
+province	Abruzzo
+province	Afyon
+province	Aichi
+province	Aksaray
+province	Alagoas
+province	Alken
+province	Amazonas State
+province	Andalusia
+province	Andel
+province	Andenne
+province	Anderlecht
+province	Anhui
+province	Ankara
+province	Antioquia
+province	Antwerp
+province	Arizona
+province	Asse
+province	Ath
+province	Athens
+province	Auckland
+province	Austria
+province	Auvergne Rhone Alpes
+province	Auvergne-Rhône-Alpes
+province	Baden-Wuerttemberg
+province	Bahia
+province	Balikesir
+province	Bangkok
+province	Baranya
+province	Barcelona
+province	Basel
+province	Basel-Stadt
+province	Basque Country
+province	Bavaria
+province	Beersel
+province	Beijing
+province	Belgium
+province	Beringen
+province	Berloz
+province	Bern
+province	Bierbeek
+province	Blegny
+province	Blida
+province	Bogota
+province	Bonheiden
+province	Boufarik
+province	Bourgogne-France-Comté
+province	Boussu
+province	Boutersem
+province	Braine-l alleud
+province	Bratislava
+province	Bree
+province	Bretagne
+province	British Columbia
+province	Brussels
+province	Budapest
+province	Buryat Republic
+province	California
+province	Canakkale
+province	Canary Islands
+province	Castel di Sangro
+province	Castilla La Mancha
+province	Castilla Y León
+province	Castilla y Leon
+province	Catalunya
+province	Central Hungary
+province	Centre-Val de Loire
+province	Chaineux
+province	Charleroi
+province	Chechen Republic
+province	Chelyabinsk Region
+province	Chiba
+province	Chihuahua
+province	China
+province	Chongqing
+province	Chungcheongnam
+province	Comunitat Valenciana
+province	Colfontaine
+province	Connecticut
+province	Copenhagen
+province	Cork
+province	Courcelles
+province	Couthuin
+province	Couvin
+province	Croatia
+province	Dakar
+province	Dalhem
+province	Deinze
+province	Dendermonde
+province	Denmark
+province	Diamond Princess
+province	Dilbeek
+province	District of Columbia
+province	Distrito Federal
+province	Doha
+province	Doornik
+province	Drenthe
+province	Dublin
+province	Duesseldorf
+province	Ellezelles
+province	Elsene
+province	England
+province	Estado de Mexico
+province	Eupen
+province	Eskisehir
+province	Espirito Santo
+province	Estinnes
+province	Etterbeek
+province	Europe
+province	Finland
+province	Flanders
+province	Flevoland
+province	Florida
+province	Fontaine-l Eveque
+province	Frameries
+province	France
+province	Friesland
+province	Friuli Venezia Giulia
+province	Fujian
+province	Galicia
+province	Ganshoren
+province	Gavleborgs lan
+province	Gelderland
+province	Genappe
+province	Geneva
+province	Gent
+province	Georgia
+province	Geraardsbergen
+province	Germany
+province	Ghent
+province	Gierle
+province	Gilgit Baltistan
+province	Goiais
+province	Grand Est
+province	Grand Canary Islands
+province	Grand Princess
+province	Graubünden
+province	Greater Accra
+province	Grimbergen
+province	Guangdong
+province	Guayas
+province	Gujarat
+province	Gyeonggi
+province	Halland
+province	Hangzhou
+province	Hasselt
+province	Hauts de France
+province	Havelange
+province	Hawaii
+province	Hawali
+province	Helden
+province	Helsinki
+province	Hemiksem
+province	Henan
+province	Henri-chapelle
+province	Herent
+province	Herselt
+province	Herstal
+province	Herve
+province	Holsbeek
+province	Ho Chi Minh City
+province	Hoegaarden
+province	Hong Kong
+province	Honnelles
+province	Houthalen-Helchteren
+province	Hubei
+province	Huldenberg
+province	Idaho
+province	Ile De France
+province	Illinois
+province	Indiana
+province	Iowa
+province	Iran
+province	Ireland
+province	Ishikawa
+province	Istanbul
+province	Italy
+province	Japan
+province	Jiangsu
+province	Jiangxi
+province	Kalmthout
+province	Kanagawa
+province	Kansai
+province	Kansas
+province	Kanto
+province	Karaman
+province	Karnataka
+province	Kastamonu
+province	Kasterlee
+province	Kathmandu
+province	Kaulile
+province	Kayseri
+province	Keelung
+province	Kerala
+province	Kessel-Lo
+province	Khabarovsk Region
+province	Khyber Pakhtunkhwa
+province	Kinshasa
+province	Kochi
+province	Knokke-Heist
+province	Kocaeli
+province	Komen
+province	Konya
+province	Kosice
+province	Kostoliste
+province	Kraainem
+province	Krasnodar Region
+province	Krasnoyarsk Region
+province	Kuala Lumpur
+province	Kuwait
+province	KwaZulu-Natal
+province	Kyoto
+province	La Louviere
+province	La Rioja
+province	Lagos
+province	Lanaken
+province	Lapland
+province	Lasne
+province	Lazio
+province	Leuven
+province	Liège
+province	Lima
+province	Limburg
+province	Limerick
+province	Linter
+province	Lipetsk Region
+province	Lisbon
+province	Lombardy
+province	Louisiana
+province	Louth
+province	Lubbeek
+province	Lucerne
+province	Lummen
+province	Luxembourg
+province	Madrid
+province	Malopolskie
+province	Manitoba
+province	Marche
+province	Martin
+province	Maryland
+province	Massachusetts
+province	Mbour
+province	Medellin
+province	Melbourne
+province	Merelbeke
+province	Mexico City
+province	Michigan
+province	Minas Gerais
+province	Minnesota
+province	Missouri
+province	Mons
+province	Montevideo
+province	Montigny-le-Tilleul
+province	Moscow
+province	Moscow Region
+province	Mouscron
+province	Munich
+province	Namur
+province	NanChang
+province	Nara
+province	Nebraska
+province	Netherlands
+province	Nevada
+province	Nevele
+province	Nevsehir
+province	New Brunswick
+province	New Jersey
+province	New Hampshire
+province	New South Wales
+province	New Taipei City
+province	Newfoundland and Labrador
+province	Nieuwerkerken
+province	Nonthaburi
+province	Normandie
+province	Normandie
+province	Norrbotten
+province	North Brabant
+province	North Carolina
+province	North Holland
+province	North Rhine Westphalia
+province	Northern Territory
+province	Northern Ireland
+province	Nottinghamshire
+province	Nova Scotia
+province	Novosibirsk Region
+province	Oevel
+province	Ohio
+province	Omsk Region
+province	Ontario
+province	Oostrozebeke
+province	Orebro lan
+province	Oregon
+province	Orenburg Region
+province	Osaka
+province	Oslo
+province	Ostergotland
+province	Otago
+province	Oudergem
+province	Overijssel
+province	Panama City
+province	Pays de la Loire
+province	Pelt
+province	Pennsylvania
+province	Perm Region
+province	Pichincha
+province	Pomorskie
+province	Portugal
+province	Primorskiy Region
+province	Pskov Region
+province	Puebla
+province	Prague
+province	Prince Edward Island
+province	Quangning
+province	Quaregnon
+province	Queretaro
+province	Queensland
+province	Quevy
+province	Quito
+province	Ramat Gan
+province	Ravels
+province	Red River Delta
+province	Republic of Buryatia
+province	Republic of Crymea
+province	Republic of Kabardino-Balkaria
+province	Republic of Sakha
+province	Republic of Tatarstan
+province	Reykjavik
+province	Rhode Island
+province	Riemst
+province	Rio de Janeiro
+province	Rio Grande do Sul
+province	Rixensart
+province	Riyadh
+province	Rome
+province	Ronse
+province	Saint-Ghislain
+province	Saint-Petersburg
+province	Saint-Saulve
+province	Saitama
+province	Sakarya
+province	Sakhalin Region
+province	Samara Region
+province	Santa Catarina
+province	Santiago
+province	Sao Paulo
+province	Saskatchewan
+province	Schwyz
+province	Scotland
+province	Selangor
+province	Seoul
+province	Seraing
+province	Schoten
+province	Shandong
+province	Shanghai
+province	Sichuan
+province	Sihanoukville
+province	Siirt
+province	Silly
+province	Singapore
+province	Sint-Agatha-Berchem
+province	Sint-Genesius-Rode
+province	Sint-Gillis-Waas
+province	Sint-Niklaas
+province	Sint-Pieters-Woluwe
+province	Sint-Truiden
+province	Småland
+province	Soignies
+province	Sormland
+province	Soumagne
+province	South Carolina
+province	South Holland
+province	South Korea
+province	South Yorkshire
+province	Spain
+province	St-Louis
+province	Stekene
+province	Stockholm
+province	Sud Kivu
+province	Sverdlovsk Region
+province	Switzerland
+province	Taipei
+province	Taiwan
+province	Talca
+province	Taoyuan
+province	Tatarstan
+province	Tbilisi
+province	Teramo
+province	Tervuren
+province	Texas
+province	Thanh Hoa
+province	Theux
+province	Thies
+province	Ticino
+province	Tielt-Winge
+province	Tienen
+province	Tilburg
+province	Tipperary
+province	Tokyo
+province	Touba
+province	Tournai
+province	Tubize
+province	Tver Region
+province	UK
+province	Ukkel
+province	United Kingdom
+province	Usti nad Labem
+province	Utah
+province	Utrecht
+province	Vasterbotten
+province	Varmland
+province	Vaud
+province	Veneto
+province	Victoria
+province	Vienna
+province	Vilvoorde
+province	Vinhphuc
+province	Virginia
+province	Vorst
+province	Waasmunster
+province	Wales
+province	Walloon Brabant
+province	Wanze
+province	Waterloo
+province	Watermaal-Bosvoorde
+province	Washington
+province	Wellington
+province	Wervik
+province	West Coast Region
+province	Western Australia
+province	Wevelgem
+province	Wicklow
+province	Wisconsin
+province	Wyoming
+province	Yunnan
+province	Zhejiang
+province	Zielonogorskie
+province	Zinnik
+province	Zolder
+province	Zonhoven
+province	Zoutleeuw
+province	Zurich
+province	Africa
+province	Asia
+province	Europe
+province	North America
+province	Oceania
+province	South America

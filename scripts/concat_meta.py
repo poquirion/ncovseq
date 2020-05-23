@@ -197,7 +197,7 @@ def main():
 
     gsaid_df['location_exposure'] = gsaid_df['country_exposure']
     gsaid_df['province_exposure'] = gsaid_df['country_exposure']
-    gsaid_df.loc[gsaid_df['country'] == 'Canada', 'province'] = gsaid_df['location']
+    gsaid_df.loc[gsaid_df['country'] == 'Canada', 'province'] = gsaid_df['division']
     gsaid_df.loc[gsaid_df['country'] != 'Canada', 'province'] = gsaid_df['country']
     gsaid_df['location'] = gsaid_df['country']
 

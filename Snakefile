@@ -1,8 +1,9 @@
 from packaging import version
 from snakemake.logging import logger
-import sys
+import os, sys
 from shutil import which
 import datetime
+
 #
 # Verify that required versions of dependencies are installed.
 #
@@ -65,7 +66,8 @@ rule data_setup:
         fasta_path = config["fasta_path"],
         qc_meta = config['qc_meta'],
         world_meta = config['world_meta'],
-        world_exclude = rules.download_latest_excludes.output.local_world_exclude
+        world_exclude = rules.download_latest_excludes.output.local_world_exclude,
+        local_exclude = config['local_exclude']
     output:
         sequences = "results/sequences.fasta",
         metadata = "results/merged_metadata.tsv",
@@ -83,6 +85,7 @@ rule data_setup:
         {output.metadata} --fasta_dir  {input.fasta_path} --output_lspq_only {output.selected_lspq} \
         --out_order {output.ordering} --out_lat_long {output.lat_long}
         cp {input.world_exclude} {output.exclude} 
+        cat {input.local_exclude} >> {output.exclude}
         """
 
 
@@ -378,7 +381,8 @@ rule traits:
     message:
         """
         Inferring ancestral traits for {params.columns!s}
-          - increase uncertainty of reconstruction by {params.sampling_bias_correction} to partially account for sampling bias
+          - increase uncertainty of reconstruction by {params.sampling_bias_correction} to 
+          partially account for sampling bias
         """
     input:
         tree = "results/tree{region}.nwk",
@@ -534,7 +538,7 @@ rule incorporate_travel_history:
             --input {input.auspice_json} \
             --colors {input.colors} \
             --lat-longs {input.lat_longs} \
-            --sampling {params.sampling} \
+            --sampling location \
             --exposure {params.exposure} \
             --output {output.auspice_json}
         """
@@ -545,18 +549,13 @@ rule fix_colorings:
     message: "Remove extraneous colorings for main build"
     input:
         auspice_json = rules.incorporate_travel_history.output.auspice_json,
-        auspice_json_no_travel = rules.export.output.auspice_json
     output:
         auspice_json = "auspice/ncov{region}.json",
-        auspice_json_no_travel = "auspice/ncov{region}_no_travel_history.json"
     shell:
         """
         python scripts/fix-colorings.py \
             --input {input.auspice_json} \
             --output {output.auspice_json}
-        python scripts/fix-colorings.py \
-            --input {input.auspice_json_no_travel} \
-            --output {output.auspice_json_no_travel}
         """
 
 
@@ -581,7 +580,7 @@ rule clean:
         "results ",
         "auspice"
     shell:
-        "rm -rfv {params}"
+        "find {params} -type f -not -name 'nextstrain_exclude*' -print0 | xargs --null -P 33 -L 1  rm  "
 
 
 rule reprod_zip:
