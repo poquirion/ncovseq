@@ -14,7 +14,6 @@ from country_list import countries_for_language
 
 
 PUBLISH_META_COLUMN = ['strain', 'virus', 'date','date_submitted', 'country', 'location', 'province', 'location_exposure',
-                       'province_exposure',
                        'ct', 'age', 'sex', 'originating_lab', 'submitting_lab', 'url']
 
 DIVISIONS = ['country', 'location', 'province']

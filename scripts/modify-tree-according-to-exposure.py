@@ -61,12 +61,7 @@ def switch_attribute(node):
     exposure = node["node_attrs"].get(EXPOSURE_TRAIT, None)
     sampling = node["node_attrs"].get(SAMPLING_TRAIT, None)
     if (sampling and not exposure):
-        print("Where there's SAMPLING_TRAIT {} we should always have EXPOSURE_TRAIT {} for node {}".format(
-            SAMPLING_TRAIT, EXPOSURE_TRAIT, node['name']))
-    # raise Exception("Where there's SAMPLING_TRAIT {} we should always have EXPOSURE_TRAIT {}".format(
-    #     SAMPLING_TRAIT, EXPOSURE_TRAIT))
-    else:
-        print('{} is good'.format(node['name']))
+        raise Exception("Where there's SAMPLING_TRAIT we should always have EXPOSURE_TRAIT")
     if exposure:
         node["node_attrs"][SAMPLING_TRAIT] = copy.copy(exposure)
         # if has a 'real' exposure history, then put this back in place now! Delete all others.
@@ -112,19 +107,15 @@ if __name__ == '__main__':
     )
 
     parser.add_argument('--input', type=str, metavar="JSON", required=True, help="input Auspice JSON")
-    # parser.add_argument('--genetic_only', action='store_true', help="Does not modify three but "
-    #                                                                                     "still add links on the map")
     parser.add_argument('--colors', type=str, metavar="TSV", required=True, help="input colors TSV")
     parser.add_argument('--lat-longs', type=str, metavar="TSV", required=True, help="input lat/longs TSV")
-    parser.add_argument('--sampling', type=str, required=True, nargs='+', help="name of sampling location attribute")
+    parser.add_argument('--sampling', type=str, required=True, help="name of sampling location attribute")
     parser.add_argument('--exposure', type=str, required=True, help="name of exposure location attribute")
     parser.add_argument('--output', type=str, metavar="JSON", required=True, help="output Auspice JSON")
     args = parser.parse_args()
 
-    # SAMPLING_TRAIT = args.sampling
-    # EXPOSURE_TRAIT = args.exposure
-    for SAMPLING_TRAIT in args.sampling:
-        EXPOSURE_TRAIT = '{}_exposure'.format(SAMPLING_TRAIT)
+    SAMPLING_TRAIT = args.sampling
+    EXPOSURE_TRAIT = args.exposure
 
     with open(args.input) as fh:
         input_json = json.load(fh)
