@@ -77,9 +77,9 @@ rule subsample_focus:
     output:
         sequences = "results/subsample_focus{region}.fasta"
     params:
-        group_by = "rta year month",
-        seq_per_group_global = 40, # i.e. if not regional build
-        seq_per_group_regional = 260
+        group_by = "country year month",
+        seq_per_group_global = 25, # i.e. if not regional build
+        seq_per_group_regional = 25
     shell:
         """
         #Figure out what region being wanted
@@ -93,7 +93,7 @@ rule subsample_focus:
         else
             seq_per_group={params.seq_per_group_regional}
             region="${{rgn//[_y]/}}"
-            region="${{region//[-y]/ }}"
+            region="${{region//[-y]/}}"
             echo "Filtering for a focal run on $region - $seq_per_group per rta"
             regionarg="--exclude-where division!="
             echo "   This is passed to augur as $regionarg'$region'"
@@ -135,7 +135,7 @@ rule make_priorities:
             echo -n >{output.priorities}
         else
             region="${{rgn//[_y]/}}"
-            region="${{region//[-y]/ }}"
+            region="${{region//[-y]/}}"
             echo "Creating priorities for focal build on $region"
             python3 scripts/priorities.py --alignment {input.alignment} \
                             --metadata {input.metadata} \
@@ -157,8 +157,8 @@ rule subsample_context:
     output:
         sequences = "results/subsample_context{region}.fasta"
     params:
-        group_by = "countext year month",
-        sequences_per_group = 20
+        group_by = "region year month",
+        sequences_per_group = 35
     shell:
         """
         #Figure out what region being wanted
@@ -169,7 +169,7 @@ rule subsample_context:
             echo -n >{output.sequences}
         else
             region="${{rgn//[_y]/}}"
-            region="${{region//[-y]/ }}"
+            region="${{region//[-y]/}}"
             echo "Creating a filtered context for a focal run on $region. Context is {params.sequences_per_group}seqs per '{params.group_by}'"
             regionarg="--exclude-where division="
             echo "   (This is passed to 'augur filter' as \"$regionarg'$region'\")"
@@ -219,11 +219,11 @@ rule adjust_metadata_regions:
             cp {input.metadata} {output.metadata}
         else
             region="${{rgn//[_y]/}}"
-            region="${{region//[-y]/ }}"
+            region="${{region//[-y]/}}"
              echo "Focal run for $region - adjusting metadata"
 
             python3 scripts/adjust_regional_meta.py \
-                                    --region "$region" \
+                                    --region '"$region"' \
                                     --metadata {input.metadata} \
                                     --output {output.metadata}
         fi

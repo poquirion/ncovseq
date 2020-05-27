@@ -20,19 +20,21 @@ if __name__ == '__main__':
     fix_casing = {
         "quebec": "Quebec"
     }
-    focal_region = fix_casing[args.region]
+    # focal_region = fix_casing[args.region]
+    focal_region = "North America"
     print("Adjusting metadata for focal region", args.region)
 
     metadata = pd.read_csv(args.metadata, delimiter='\t')
     metadata.insert(12, 'focal', True)
 
-    metadata.loc[metadata.division != focal_region, 'focal'] = False
-    metadata.loc[metadata.division != focal_region, 'rta'] = metadata.country
-    metadata.loc[metadata.division != focal_region, 'rss'] = metadata.country
-    metadata.loc[metadata.division != focal_region, 'country'] = metadata.country
-    metadata.loc[(metadata.division == focal_region) & (metadata.division_exposure != focal_region), 'rta_exposure'] = metadata.country_exposure
-    metadata.loc[(metadata.division == focal_region) & (metadata.division_exposure != focal_region), 'rss_exposure'] = metadata.country_exposure
-    metadata.loc[(metadata.division == focal_region) & (metadata.division_exposure != focal_region), 'country_exposure'] = metadata.country_exposure
+    metadata.loc[metadata.region != focal_region, 'focal'] = False
+    metadata.loc[metadata.region != focal_region, 'province'] = metadata.region
+    metadata.loc[metadata.region != focal_region, 'location'] = metadata.region
+    metadata.loc[metadata.region != focal_region, 'country'] = metadata.country
+    # metadata.loc[(metadata.division == focal_region) & (metadata.division_exposure != focal_region),
+    #              'location_exposure'] = metadata.country_exposure
+    # metadata.loc[(metadata.division == focal_region) & (metadata.division_exposure != focal_region), 'rss_exposure'] = metadata.country_exposure
+    # metadata.loc[(metadata.division == focal_region) & (metadata.division_exposure != focal_region), 'country_exposure'] = metadata.country_exposure
 
     metadata.to_csv(args.output, index=False, sep="\t")
 '''

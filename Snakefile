@@ -36,6 +36,8 @@ def get_todays_date():
 # Add new regions here!
 REGIONS = ["_quebec","_global"]
 
+TRAIT_REZ = ('location','province')
+
 wildcard_constraints:
     region = "|".join(REGIONS) + "||",
     date = "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
@@ -165,7 +167,7 @@ rule align:
         reference = config["reference"]
     output:
         alignment = "results/split_alignments/{cluster}.fasta"
-    threads: 8
+    threads: 2
     shell:
         """
         augur align \
@@ -388,9 +390,9 @@ rule traits:
         tree = "results/tree{region}.nwk",
         metadata = rules.adjust_metadata.output
     output:
-        node_data = "results/traits{region}.json",
+        node_data = "results/traits{region}_{trait_rez}.json"
     params:
-        columns = _get_exposure_trait_for_wildcards,
+        columns = "{trait_rez}",
         sampling_bias_correction = 2.5
     shell:
         """
@@ -494,7 +496,7 @@ rule export:
         branch_lengths = rules.refine.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
-        traits = rules.traits.output.node_data,
+        traits = expand(rules.traits.output.node_data, trait_rez=TRAIT_REZ, allow_missing=True),
         auspice_config = config["auspice_config"],
         colors = rules.colors.output.colors,
         lat_longs = rules.data_setup.output.lat_long,
@@ -538,7 +540,7 @@ rule incorporate_travel_history:
             --input {input.auspice_json} \
             --colors {input.colors} \
             --lat-longs {input.lat_longs} \
-            --sampling location \
+            --sampling {params.sampling} \
             --exposure {params.exposure} \
             --output {output.auspice_json}
         """
@@ -548,7 +550,7 @@ rule incorporate_travel_history:
 rule fix_colorings:
     message: "Remove extraneous colorings for main build"
     input:
-        auspice_json = rules.incorporate_travel_history.output.auspice_json,
+        auspice_json = rules.export.output.auspice_json,
     output:
         auspice_json = "auspice/ncov{region}.json",
     shell:
