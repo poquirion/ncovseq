@@ -113,14 +113,14 @@ if __name__ == '__main__':
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument("--alignment", type=str, required=True, help="FASTA file of alignment")
-    parser.add_argument("--metadata", type = str, required=True, help="metadata")
+    parser.add_argument("--metadata", type=str, required=False, help="metadata")
     parser.add_argument("--focal-alignment", type=str, required=True, help="focal sample of sequences")
     parser.add_argument("--output", type=str, required=True, help="FASTA file of output alignment")
     args = parser.parse_args()
 
     # load entire alignment and the alignment of focal sequences (upper case -- probably not necessary)
     context_seqs_dict = calculate_snp_matrix(args.alignment)
-    focal_seqs_dict = calculate_snp_matrix(args.focal_alignment, consensus = context_seqs_dict['consensus'])
+    focal_seqs_dict = calculate_snp_matrix(args.focal_alignment, consensus=context_seqs_dict['consensus'])
     alignment_length = len(context_seqs_dict['consensus'])
     print("Done reading the alignments.")
 
