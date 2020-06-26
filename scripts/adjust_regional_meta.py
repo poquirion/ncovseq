@@ -22,7 +22,7 @@ if __name__ == '__main__':
     }
     # focal_region = fix_casing[args.region]
     focal_region = "North America"
-    print("Adjusting metadata for focal region", args.region)
+    print("Adjusting metadata for focal region", focal_region)
 
     metadata = pd.read_csv(args.metadata, delimiter='\t')
     metadata.insert(12, 'focal', True)

@@ -14,7 +14,7 @@ from country_list import countries_for_language
 
 
 PUBLISH_META_COLUMN = ['strain', 'virus', 'date','date_submitted', 'country', 'location', 'province', 'location_exposure',
-                       'ct', 'age', 'sex', 'originating_lab', 'submitting_lab', 'url']
+                       'ct', 'age', 'sex', 'originating_lab', 'submitting_lab', 'url', 'neighbour']
 
 DIVISIONS = ['country', 'location', 'province']
 
@@ -23,7 +23,7 @@ def count_fasta_len(fastas):
     id_len = {}
     for fasta in fastas:
         with open(fasta) as fp:
-            fasta_id = fp.readline().lstrip('>').rstrip('\n')
+            fasta_id = fp.readline().lstrip('>').rstrip('\n').split()[0]
             id_len[fasta_id] = len(fp.read())
 
     return id_len
@@ -147,6 +147,7 @@ def main():
     lnspq_df['country_exposure'].replace(trans, inplace=True)
     lnspq_df['location_exposure'] = lnspq_df['country_exposure']
     lnspq_df['province_exposure'] = lnspq_df['country_exposure']
+    lnspq_df['neighbour'] = 'no'
 
     def updateid(old_id):
         return id_format.format(old_id)
@@ -167,7 +168,6 @@ def main():
     lnspq_df['country'] = 'Canada'
     lnspq_df['location'] = 'Quebec'
     lnspq_df['division'] = 'Quebec'
-    # lnspq_df['authors'] = 'Moira et al'
     lnspq_df['region'] = 'North America'
     lnspq_df['submitting_lab'] = 'LSPQ'
     lnspq_df['date_submitted'] = datetime.datetime.today().strftime('%Y-%m-%d')
@@ -175,7 +175,7 @@ def main():
 
 
     if fasta_dir:
-        lnspq_df['url'] = 'http://www.covseq.ca/data/fasta'
+        lnspq_df['url'] = 'http://www.covseq.ca/data/'
     else:
         lnspq_df['url'] = ''
 
@@ -183,11 +183,13 @@ def main():
 
     # still need to fix 'Iles Turques-Caiques' and 'Iles Vierges (E-U)',
 
-    neighbourg = ['New York', 'Ontario', 'Vermont', 'New Hampshire',
+    neighbour = ['New York', 'Ontario', 'Vermont', 'New Hampshire',
                   "Massachusetts", 'Maine', 'New Brunswick', 'Grand Princess']
 
-    # we will do only location and province
+    gsaid_df['neighbour'] = 'no'
+    gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'neighbour'] = 'yes'
 
+    # we will do only location and province
     # gsaid_df.loc[gsaid_df['region'] != 'North America', 'rss'] = gsaid_df['country']
     # gsaid_df.loc[gsaid_df['region'] != 'North America', 'rta'] = gsaid_df['country']
     # gsaid_df.loc[gsaid_df['region'] == 'North America', 'rss'] = gsaid_df['country']
@@ -207,6 +209,7 @@ def main():
     approved_lspq.to_csv(approved_lspq_tsv, sep='\t', index=False)
 
     final_df = pd.concat([approved_lspq, gsaid_df], sort=False)
+    final_df.drop_duplicates(subset='strain', keep="first", inplace=True)
     final_df.to_csv(out_path, sep='\t', index=False)
     create_ordering(final_df, file_name=out_order)
     genetate_lat_long(final_df, file_name=out_lat_long)

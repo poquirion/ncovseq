@@ -49,8 +49,7 @@ configfile: "config/Snakefile.yaml"
 rule all:
     input:
         auspice_json = "auspice/ncov.json",
-        tip_frequencies_json = "auspice/ncov_tip-frequencies.json"
-
+        tip_frequencies_json = "auspice/ncov_tip-frequencies.json",
 
 
 rule download_latest_excludes:
@@ -91,6 +90,67 @@ rule data_setup:
         """
 
 
+rule add_canada:
+    message:
+        """
+        # add a minimum amount of seq from Specific country
+        """
+    input:
+        sequences = rules.data_setup.output.sequences,
+        metadata = rules.data_setup.output.metadata,
+        exclude = rules.data_setup.output.exclude
+    output:
+        sequences = "results/filtered_canada.fasta"
+    params:
+        min_length = config["min_length"],
+        max_date = config["max_date"]
+    threads: 1
+    shell:
+        """augur filter \
+         --sequences-per-group 100 \
+         --group-by country \
+         --min-length {params.min_length} \
+         --max-date {params.max_date} \
+         --exclude-where  "country!=Canada" \
+         --metadata {input.metadata} \
+         --sequences {input.sequences} \
+         --priority data/priority.txt  \
+         -o {output.sequences}
+         echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
+        """
+
+
+rule add_neighbour:
+    message:
+        """
+        # add a minimum amount of seq from Specific country
+        """
+    input:
+        sequences = rules.data_setup.output.sequences,
+        metadata = rules.data_setup.output.metadata,
+        exclude = rules.data_setup.output.exclude
+    output:
+        sequences = "results/filtered_neigbour.fasta"
+    params:
+        min_length = config["min_length"],
+        max_date = config["max_date"]
+    threads: 1
+    shell:
+        """augur filter \
+         --sequences-per-group 15 \
+         --group-by division \
+         --min-length {params.min_length} \
+         --max-date {params.max_date} \
+         --exclude-where  "neighbour=no" \
+         --metadata {input.metadata} \
+         --sequences {input.sequences} \
+         --priority data/priority.txt  \
+         -o {output.sequences}
+         echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
+        """
+
+
+
 
 rule filter:
     message:
@@ -100,20 +160,23 @@ rule filter:
           - minimum genome length of {params.min_length}
         """
     input:
-        sequences = rules.data_setup.output.sequences,
+         sequences = rules.data_setup.output.sequences,
          metadata = rules.data_setup.output.metadata,
          include = config["include"],
          exclude = rules.data_setup.output.exclude
     output:
-        sequences = "results/filtered.fasta"
+        sequences = "results/filtered_global.fasta"
+    threads: 1
     params:
         min_length = config["min_length"],
         exclude_where = config["exclude_where"],
         group_by = config["group_by"],
-        sequences_per_group = config["sequences_per_group"]
+        sequences_per_group = config["sequences_per_group"],
+        max_date = config["max_date"]
     shell:
         """
         augur filter \
+            --max-date {params.max_date} \
             --sequences {input.sequences} \
             --metadata {input.metadata} \
             --include {input.include} \
@@ -122,14 +185,37 @@ rule filter:
             --min-length {params.min_length} \
             --group-by {params.group_by} \
             --sequences-per-group {params.sequences_per_group} \
-            --output {output.sequences}
-
+            --output {output.sequences} \
+            --priority data/priority.txt
             echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
         """
 
+
+
+rule merge_fasta_selection:
+    message:
+        """
+        Combine and deduplicate FASTAs
+        """
+    input:
+        rules.filter.output.sequences,
+        rules.add_canada.output.sequences,
+        rules.add_neighbour.output.sequences
+    output:
+        sequences = "results/filtered.fasta"
+    shell:
+        """
+        python3 scripts/combine-and-dedup-fastas.py \
+            --input {input} \
+            --output {output.sequences}
+        """
+
+
+
+
 checkpoint partition_sequences:
     input:
-        sequences = rules.filter.output.sequences
+        sequences = rules.merge_fasta_selection.output.sequences
     output:
         split_sequences = directory("results/split_sequences/pre/")
     params:
@@ -225,7 +311,7 @@ rule subsample:
     input:
         rules.mask.output.alignment
     output:
-        "results/subsampled_alignment{region}.fasta"
+        "results/subsampled_alignment.fasta"
     shell:
         """
         cp {input} {output}
@@ -235,7 +321,7 @@ rule adjust_metadata:
     input:
         rules.data_setup.output.metadata
     output:
-        "results/metadata_adjusted{region}.tsv"
+        "results/metadata_adjusted.tsv"
     shell:
         """
         cp {input} {output}
@@ -244,9 +330,9 @@ rule adjust_metadata:
 rule tree:
     message: "Building tree"
     input:
-        alignment = "results/subsampled_alignment{region}.fasta"
+        alignment = "results/subsampled_alignment.fasta"
     output:
-        tree = "results/tree_raw{region}.nwk"
+        tree = "results/tree_raw.nwk"
     threads: 8
     shell:
         """
@@ -262,10 +348,7 @@ def _get_alignments_for_tree(wildcards):
     """Global builds use the complete alignment of sequences while regional builds
     use a subsampled set of sequences.
     """
-    if wildcards.region == "":
-        return rules.mask.output.alignment
-    else:
-        return rules.subsample_regions.output.alignment
+    return rules.mask.output.alignment
 
 rule refine:
     message:
@@ -280,11 +363,11 @@ rule refine:
         alignment = _get_alignments_for_tree,
         metadata = rules.adjust_metadata.output
     output:
-        tree = "results/tree{region}.nwk",
-        node_data = "results/branch_lengths{region}.json"
+        tree = "results/tree.nwk",
+        node_data = "results/branch_lengths.json"
     threads: 1
     params:
-        root = "--root Wuhan-Hu-1/2019 Wuhan/WH01/2019",
+        root = "--root Wuhan/WH01/2019",
         clock_rate = 0.0008,
         clock_std_dev = 0.0004,
         coalescent = "skyline",
@@ -318,10 +401,10 @@ rule ancestral:
           - inferring ambiguous mutations
         """
     input:
-        tree = "results/tree{region}.nwk",
+        tree = "results/tree.nwk",
         alignment = _get_alignments_for_tree
     output:
-        node_data = "results/nt_muts{region}.json"
+        node_data = "results/nt_muts.json"
     params:
         inference = "joint"
     shell:
@@ -340,7 +423,7 @@ rule haplotype_status:
     input:
         nt_muts = rules.ancestral.output.node_data
     output:
-        node_data = "results/haplotype_status{region}.json"
+        node_data = "results/haplotype_status.json"
     params:
         reference_node_name = "Wuhan/WH01/2019"
     shell:
@@ -354,11 +437,11 @@ rule haplotype_status:
 rule translate:
     message: "Translating amino acid sequences"
     input:
-        tree = "results/tree{region}.nwk",
+        tree = "results/tree.nwk",
         node_data = rules.ancestral.output.node_data,
         reference = config["reference"]
     output:
-        node_data = "results/aa_muts{region}.json"
+        node_data = "results/aa_muts.json"
     shell:
         """
         augur translate \
@@ -387,10 +470,10 @@ rule traits:
           partially account for sampling bias
         """
     input:
-        tree = "results/tree{region}.nwk",
+        tree = "results/tree.nwk",
         metadata = rules.adjust_metadata.output
     output:
-        node_data = "results/traits{region}_{trait_rez}.json"
+        node_data = "results/traits_{trait_rez}.json"
     params:
         columns = "{trait_rez}",
         sampling_bias_correction = 2.5
@@ -408,12 +491,12 @@ rule traits:
 rule clades:
     message: "Adding internal clade labels"
     input:
-        tree = "results/tree{region}.nwk",
+        tree = "results/tree.nwk",
         aa_muts = rules.translate.output.node_data,
         nuc_muts = rules.ancestral.output.node_data,
         clades = config["clades"]
     output:
-        clade_data = "results/clades{region}.json"
+        clade_data = "results/clades.json"
     shell:
         """
         augur clades --tree {input.tree} \
@@ -429,7 +512,7 @@ rule colors:
         color_schemes = config["color_schemes"],
         metadata = rules.adjust_metadata.output
     output:
-        colors = "results/colors{region}.tsv"
+        colors = "results/colors.tsv"
     shell:
         """
         python3 scripts/assign-colors.py \
@@ -444,7 +527,7 @@ rule recency:
     input:
         metadata = rules.adjust_metadata.output
     output:
-        "results/recency{region}.json"
+        "results/recency.json"
     shell:
         """
         python3 scripts/construct-recency-from-submission-date.py \
@@ -458,7 +541,7 @@ rule tip_frequencies:
         tree = rules.refine.output.tree,
         metadata = rules.adjust_metadata.output
     output:
-        tip_frequencies_json = "auspice/ncov{region}_tip-frequencies.json"
+        tip_frequencies_json = "auspice/ncov_tip-frequencies.json"
     params:
         min_date = 2020.0,
         pivot_interval = 1,
@@ -478,15 +561,7 @@ rule tip_frequencies:
         """
 
 def export_title(wildcards):
-    region = wildcards.region
-
-    if not region:
-        return "Genomic epidemiology of novel coronavirus"
-    elif region == "_global":
-        return "Genomic epidemiology of novel coronavirus - Global subsampling"
-    else:
-        region_title = region.lstrip("_").replace("-", " ").title()
-        return f"Genomic epidemiology of novel coronavirus - {region_title}-focused subsampling"
+        return "Quebec focused Genomic epidemiology of novel coronavirus"
 
 rule export:
     message: "Exporting data files for for auspice"
@@ -501,10 +576,10 @@ rule export:
         colors = rules.colors.output.colors,
         lat_longs = rules.data_setup.output.lat_long,
         description = config["description"],
-        clades = "results/clades{region}.json",
+        clades = "results/clades.json",
         recency = rules.recency.output
     output:
-        auspice_json = "results/ncov_with_accessions{region}.json"
+        auspice_json = "results/ncov_with_accessions.json"
     params:
         title = export_title
     shell:
@@ -522,37 +597,12 @@ rule export:
         """
 
 
-
-rule incorporate_travel_history:
-    message: "Adjusting main auspice JSON to take into account travel history"
-    input:
-        auspice_json = rules.export.output.auspice_json,
-        colors = rules.colors.output.colors,
-        lat_longs = rules.data_setup.output.lat_long
-    params:
-        sampling = _get_sampling_trait_for_wildcards,
-        exposure = _get_exposure_trait_for_wildcards
-    output:
-        auspice_json = "results/ncov_with_accessions_and_travel_branches{region}.json"
-    shell:
-        """
-        python3 ./scripts/modify-tree-according-to-exposure.py \
-            --input {input.auspice_json} \
-            --colors {input.colors} \
-            --lat-longs {input.lat_longs} \
-            --sampling {params.sampling} \
-            --exposure {params.exposure} \
-            --output {output.auspice_json}
-        """
-
-
-
 rule fix_colorings:
     message: "Remove extraneous colorings for main build"
     input:
         auspice_json = rules.export.output.auspice_json,
     output:
-        auspice_json = "auspice/ncov{region}.json",
+        auspice_json = "auspice/ncov.json",
     shell:
         """
         python scripts/fix-colorings.py \
@@ -568,8 +618,8 @@ rule dated_json:
         auspice_json = rules.fix_colorings.output.auspice_json,
         tip_frequencies_json = rules.tip_frequencies.output.tip_frequencies_json
     output:
-        dated_auspice_json = "auspice/ncov{region}_{date}.json",
-        dated_tip_frequencies_json = "auspice/ncov{region}_{date}_tip-frequencies.json"
+        dated_auspice_json = "auspice/ncov_{}.json".format(get_todays_date()),
+        dated_tip_frequencies_json = "auspice/ncov_{}_tip-frequencies.json".format(get_todays_date())
     shell:
         """
         cp {input.auspice_json} {output.dated_auspice_json}

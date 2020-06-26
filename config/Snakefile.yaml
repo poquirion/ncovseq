@@ -2,27 +2,30 @@
 # To temporarily override or provide a value, you can use snakemake's --config
 # or --configfile options.
 ---
-fasta_path: "/genfs/projects/COVID_consensus/2020_05_08/"
+fasta_path: "/genfs/projects/COVID_consensus/FinalPublished/"
 qc_meta: "/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv"
-world_meta: "/genfs/projects/COVID_consensus/metadata/metadata_2020-05-20_13-00.tsv"
+world_meta: "/genfs/projects/COVID_consensus/metadata/metadata_2020-06-14_18-52.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files /genfs/projects/COVID_consensus/metadata/sequences_2020-05-20_13-00.fasta"
+extra_fasta: "--extra_fasta_files data/subsampled_alignment_no_quebec_before_april_1.fasta"
 
 tree_method: "iqtree"
 substitution-model: "GTR" # {HKY,GTR,HKY+G,GTR+G,GTR+R10}
 
 # filters
-group_by: "country year month"
-sequences_per_group: "25"  # 10 region year month get about 225 samples
-min_length: 27000
+group_by: "region year month"
+sequences_per_group: "10"  # 10 region year month get about 225 samples
+sub_group_by: "region year month"
+sub_sequences_per_group: "2"
+min_length: 25000
 exclude_where: "date='2015'"
+max_date: "20200331" # YYYYMMDD
 
 # put the right input output connections in snakefile
 ordering: "results/ordering.tsv"
 
-#include: "config/include_all.txt" # all QC data and two original wuhan are included
 include: "config/include.txt" # all QC data and two original wuhan are included
+#include: "config/include_mini.txt" # all QC data and two original wuhan are included
 reference: "config/coronavirus_Wuhan-Hu-1.gb" # the one used for assembly
 outgroup: "config/outgroup.fasta"
 color_schemes: "config/color_schemes.tsv"
