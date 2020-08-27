@@ -184,7 +184,7 @@ def main():
     # still need to fix 'Iles Turques-Caiques' and 'Iles Vierges (E-U)',
 
     neighbour = ['New York', 'Ontario', 'Vermont', 'New Hampshire',
-                  "Massachusetts", 'Maine', 'New Brunswick', 'Grand Princess']
+                  "Massachusetts", 'Maine', 'New Brunswick']
 
     gsaid_df['neighbour'] = 'no'
     gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'neighbour'] = 'yes'
@@ -194,12 +194,12 @@ def main():
     # gsaid_df.loc[gsaid_df['region'] != 'North America', 'rta'] = gsaid_df['country']
     # gsaid_df.loc[gsaid_df['region'] == 'North America', 'rss'] = gsaid_df['country']
     # gsaid_df.loc[gsaid_df['region'] == 'North America', 'rta'] = gsaid_df['country']
-    # gsaid_df.loc[gsaid_df['division'].isin(neighbourg), 'rss'] = gsaid_df['division']
 
     gsaid_df['location_exposure'] = gsaid_df['country_exposure']
     gsaid_df['province_exposure'] = gsaid_df['country_exposure']
     gsaid_df.loc[gsaid_df['country'] == 'Canada', 'province'] = gsaid_df['division']
     gsaid_df.loc[gsaid_df['country'] != 'Canada', 'province'] = gsaid_df['country']
+    gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'province'] = gsaid_df['division']
     gsaid_df['location'] = gsaid_df['country']
 
     def only_valid(in_df):

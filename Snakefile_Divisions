@@ -71,15 +71,15 @@ rule subsample_focus:
         Subsample all sequences into a focal set
         """
     input:
-        sequences = rules.mask.output.alignment,
+         sequences = rules.mask.output.alignment,
          metadata = rules.data_setup.output.metadata,
          include = config['include']
     output:
         sequences = "results/subsample_focus{region}.fasta"
     params:
         group_by = "country year month",
-        seq_per_group_global = 25, # i.e. if not regional build
-        seq_per_group_regional = 25
+        seq_per_group_global = 2, # i.e. if not regional build
+        seq_per_group_regional = 2
     shell:
         """
         #Figure out what region being wanted
@@ -152,13 +152,14 @@ rule subsample_context:
         """
     input:
         sequences = rules.mask.output.alignment,
-         metadata = rules.data_setup.output.metadata,
-         priorities = rules.make_priorities.output.priorities
+        metadata = rules.data_setup.output.metadata,
+        priorities = rules.make_priorities.output.priorities,
+        include = config["include"]
     output:
         sequences = "results/subsample_context{region}.fasta"
     params:
-        group_by = "region year month",
-        sequences_per_group = 35
+        group_by = config['sub_group_by'],
+        sequences_per_group = config['sub_sequences_per_group']
     shell:
         """
         #Figure out what region being wanted
@@ -181,7 +182,7 @@ rule subsample_context:
                 --priority {input.priorities} \
                 --group-by {params.group_by} \
                 --sequences-per-group {params.sequences_per_group} \
-                --output {output.sequences}
+                --output {output.sequences} 
         fi
         """
 
@@ -228,16 +229,5 @@ rule adjust_metadata_regions:
                                     --output {output.metadata}
         fi
         """
-
-#
-# Deployment and error handlers, including Slack messaging integrations.
-#
-
-from os import environ
-
-
-#EricF comment
-#SLACK_TOKEN   = environ["SLACK_TOKEN"]   = config["slack_token"]   or ""
-#SLACK_CHANNEL = environ["SLACK_CHANNEL"] = config["slack_channel"] or ""
 
 
