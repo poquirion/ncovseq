@@ -38,7 +38,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--inspq_meta", default='/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv'
                         , help="The LNSPQ .tsv")
-    parser.add_argument("--fasta_dir", default='/genfs/projects/COVID_consensus/FinalPublished', help="The modified .tsv")
+    parser.add_argument("--fasta_dir", default='/genfs/projects/COVID_consensus/release_data_freeze1', help="The modified .tsv")
     parser.add_argument("--output_lspq", default='lspq_metadata.tsv', help="Approved lspq .tsv")
     parser.add_argument('--id_format', default='Canada/Qc-{}/2020', type=str, help="format for publish "
                                                                                                   "id")
@@ -102,7 +102,12 @@ def main():
     if selection_list_file is not None:
         valid_id = set(open(selection_list_file).read().splitlines())
         fastas = [f for f in fastas if os.path.basename(f).split('.')[0] in valid_id and '.rej.' not in f]
-        print(valid_id.difference(set([os.path.basename(f).split('.')[0] for f in fastas])))
+        with open('/tmp/missing','w') as fp:
+            diff = valid_id.difference(set([os.path.basename(f).split('.')[0] for f in fastas]))
+            # can be use for that :( `cat   /tmp/missing | xargs -i bash -c 'ls *{}*'`
+            fp.write('\n'.join(diff)+'\n')
+            print(diff)
+
     fasta_id_len = count_fasta_len(fastas)
     for fid, l in fasta_id_len.items():
         lnspq_df.loc[lnspq_df['strain'] == fid, 'lenth'] = int(l)
@@ -138,6 +143,7 @@ def main():
     meta_data = '{}/{}'.format(per_hospital_dir, approved_lspq_tsv)
     approved_lspq.to_csv(meta_data, sep='\t', index=False)
     o_lab_group = lnspq_df.groupby('originating_lab')
+    o_lab_meta_group = approved_lspq.groupby('originating_lab')
 
     seq_andfasta_tar = tarfile.open('{}/all_fasta_and_meta.tgz'.format(per_hospital_dir), "w:gz", dereference=True)
     seq_andfasta_zipMe = zipfile.ZipFile('{}/all_fasta_and_meta.zip'.format(per_hospital_dir), 'w')
@@ -150,16 +156,24 @@ def main():
         hospital_clean = clean_hospital_name(hospital)
         hospital_path = '{}/{}'.format(per_hospital_dir, hospital_clean)
         os.makedirs(hospital_path, exist_ok=True)
-        tar = tarfile.open('{}/{}_fasta.tgz'.format(hospital_path, hospital_clean), "w:gz", dereference=True)
-        zipMe = zipfile.ZipFile('{}/{}_fasta.zip'.format(hospital_path, hospital_clean), 'w')
+        tar = tarfile.open('{}/{}.tgz'.format(hospital_path, hospital_clean), "w:gz", dereference=True)
+        zipMe = zipfile.ZipFile('{}/{}.zip'.format(hospital_path, hospital_clean), 'w')
 
+        meta_hospital_df = o_lab_meta_group.get_group(hospital)
+        meta_hospital = '{0}/{1}/{1}.tsv'.format(per_hospital_dir, hospital_clean)
+        meta_hospital_df.to_csv(meta_hospital, sep='\t', index=False)
+        zipMe.write(meta_hospital, compress_type=zipfile.ZIP_DEFLATED
+                    , arcname='{0}/{0}.tsv'.format(hospital_clean))
+        tar.add(meta_hospital, arcname='{0}/{0}.tsv'.format(hospital_clean))
 
         for virus in ids:
             try:
-                fasta = glob.glob("{}/{}*.fasta".format(fasta_dir, virus))[0]
-                # Renaming of the fasta happens here
-                dest_id = os.path.basename(fasta).split('.')[0]
-                dest_fasta = '{}.fasta'.format(dest_id)
+                in_fasta = [i for i in fastas if virus in i]
+                if len(in_fasta) != 1:
+                    raise IOError('Id {} has more than one entry\n {}'.format(virus, in_fasta))
+                fasta = in_fasta[0]
+                dest_id, version = os.path.basename(fasta).split('.')[0:2]
+                dest_fasta = os.path.basename(fasta)
 
                 os.chmod(fasta, int('664', base=8))
                 shutil.copy2(fasta, '{}/{}'.format(hospital_path, dest_fasta))
@@ -194,7 +208,8 @@ def print_web_link(all_data, live_data):
     live_hospital = live_data.groupby('originating_lab')
 
     template_in = ('- {0} [<a name="tgz" href="https://covseq.ca/data/{1}/{1}_fasta.tgz">tgz</a>]  [<a name="zip" '
-                'href="https://covseq.ca/data/{1}/{1}_fasta.zip">zip</a>]')
+                'href="https://covseq.ca/data/{1}/{1}_fasta.zip">zip</a>]  [<a name="meta" '
+                   'href="https://covseq.ca/data/{1}/{1}.tsv">meta</a>]')
     template_out = ('- {0} ')
     live = [i for i, j in live_hospital['originating_lab']]
 
