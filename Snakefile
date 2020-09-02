@@ -48,8 +48,8 @@ configfile: "config/Snakefile.yaml"
 # simple rule to call snakemake for outsider users
 rule all:
     input:
-        auspice_json = "auspice/ncov.json",
-        tip_frequencies_json = "auspice/ncov_tip-frequencies.json",
+        auspice_json = "auspice/quebec-public-release_data-freeze1.json",
+        tip_frequencies_json = "auspice/quebec-public-release_data-freeze1.json",
 
 
 rule download_latest_excludes:

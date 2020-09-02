@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 """
 Mask initial bases from alignment FASTA
 """
@@ -109,7 +109,7 @@ def calculate_distance_matrix(sparse_matrix_A, sparse_matrix_B, consensus):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="generate priorities files based on genetic proximity to focal sample",
+        description="Generate priorities files based on genetic proximity to focal sample, 0 = closest",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument("--alignment", type=str, required=True, help="FASTA file of alignment")
