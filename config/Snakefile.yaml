@@ -2,12 +2,12 @@
 # To temporarily override or provide a value, you can use snakemake's --config
 # or --configfile options.
 ---
-fasta_path: "/genfs/projects/COVID_consensus/FinalPublished/"
+fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze1/"
 qc_meta: "/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv"
-world_meta: "/genfs/projects/COVID_consensus/metadata/metadata_2020-06-14_18-52.tsv"
+world_meta: "config/metadata_2020-09-02_13-11.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files data/subsampled_alignment_no_quebec_before_april_1.fasta"
+extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta"
 
 tree_method: "iqtree"
 substitution-model: "GTR" # {HKY,GTR,HKY+G,GTR+G,GTR+R10}
@@ -19,21 +19,21 @@ sub_group_by: "region year month"
 sub_sequences_per_group: "2"
 min_length: 25000
 exclude_where: "date='2015'"
-max_date: "20200331" # YYYYMMDD
+max_date: "20200401" # YYYYMMDD
 
 # put the right input output connections in snakefile
 ordering: "results/ordering.tsv"
 
 include: "config/include.txt" # all QC data and two original wuhan are included
 #include: "config/include_mini.txt" # all QC data and two original wuhan are included
-reference: "config/coronavirus_Wuhan-Hu-1.gb" # the one used for assembly
+reference: "config/coronavirus_Wuhan-Hu-1.gb" # the one used for assembly and alignment
 outgroup: "config/outgroup.fasta"
 color_schemes: "config/color_schemes.tsv"
 auspice_config: "config/auspice_config.json"
 auspice_config_gisaid: "config/auspice_config_gisaid.json"
 auspice_config_zh: "config/auspice_config_zh.json"
 lat_longs: "config/lat_longs.tsv"
-description: "config/description.md"
+description: "config/description_freeze1.md"
 description_zh: "config/description_zh.md"
 clades: "config/clades.tsv"
 

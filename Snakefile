@@ -48,8 +48,8 @@ configfile: "config/Snakefile.yaml"
 # simple rule to call snakemake for outsider users
 rule all:
     input:
-        auspice_json = "auspice/quebec-public-release_data-freeze1.json",
-        tip_frequencies_json = "auspice/quebec-public-release_data-freeze1.json",
+        auspice_json = "auspice/ncov.json",
+        tip_frequencies_json = "auspice/ncov_tip-frequencies.json",
 
 
 rule download_latest_excludes:
@@ -58,7 +58,8 @@ rule download_latest_excludes:
         local_world_exclude = 'results/nextstrain_exclude{}.tsv'.format(datetime.date.today())
     shell:
         """
-        wget {config[exclude_latest]} -O {output.local_world_exclude}
+        # wget {config[exclude_latest]} -O {output.local_world_exclude}
+        touch {output.local_world_exclude} # nothing comming from the outside on that run
         """
 
 rule data_setup:
@@ -124,6 +125,7 @@ rule add_neighbour:
     message:
         """
         # add a minimum amount of seq from Specific country
+        # the neigbour list is  set in scripts/concat_meta.py
         """
     input:
         sequences = rules.data_setup.output.sequences,
@@ -199,8 +201,8 @@ rule merge_fasta_selection:
         """
     input:
         rules.filter.output.sequences,
-        rules.add_canada.output.sequences,
-        rules.add_neighbour.output.sequences
+        # rules.add_canada.output.sequences,
+        # rules.add_neighbour.output.sequences
     output:
         sequences = "results/filtered.fasta"
     shell:
