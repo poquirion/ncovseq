@@ -3,7 +3,7 @@
 # or --configfile options.
 ---
 fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze1/"
-qc_meta: "/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv"
+qc_meta: "~/meta/sgil_extract.tsv"
 world_meta: "config/metadata_gsaid.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
