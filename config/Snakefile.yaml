@@ -3,11 +3,11 @@
 # or --configfile options.
 ---
 fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze1/"
-qc_meta: "~/meta/sgil_extract.tsv"
+qc_meta: "/home/poq/meta/sgil_extract.tsv"
 world_meta: "config/metadata_gsaid.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta $GSAID_FASTA"
+extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta /genfs/projects/augur_covid/full_freeze_large/data/gsaid_before_april_1_.fasta"
 
 tree_method: "iqtree"
 substitution-model: "GTR" # {HKY,GTR,HKY+G,GTR+G,GTR+R10}
@@ -23,7 +23,7 @@ sub_sequences_per_group: "2"
 min_length: 25000
 exclude_where: "date='2015' "
 max_date: "20200401" # YYYYMMDD
-priority: "data/aligned_21935_score.txt"
+priority: "/genfs/projects/augur_covid/full_freeze_large/data/aligned_21935_score.txt"
 
 # put the right input output connections in snakefile
 ordering: "results/ordering.tsv"
