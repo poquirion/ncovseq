@@ -7,7 +7,7 @@ qc_meta: "~/meta/sgil_extract.tsv"
 world_meta: "config/metadata_gsaid.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta ../data/aligned_21935_corrected_id_for_2020-09-02_13-11.fasta"
+extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta $GSAID_FASTA"
 
 tree_method: "iqtree"
 substitution-model: "GTR" # {HKY,GTR,HKY+G,GTR+G,GTR+R10}
