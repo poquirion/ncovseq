@@ -207,8 +207,8 @@ def print_web_link(all_data, live_data):
     all_hospital = all_data.groupby('originating_lab')
     live_hospital = live_data.groupby('originating_lab')
 
-    template_in = ('- {0} [<a name="tgz" href="https://covseq.ca/data/{1}/{1}_fasta.tgz">tgz</a>]  [<a name="zip" '
-                'href="https://covseq.ca/data/{1}/{1}_fasta.zip">zip</a>]  [<a name="meta" '
+    template_in = ('- {0} [<a name="tgz" href="https://covseq.ca/data/{1}/{1}.tgz">tgz</a>]  [<a name="zip" '
+                'href="https://covseq.ca/data/{1}/{1}.zip">zip</a>]  [<a name="meta" '
                    'href="https://covseq.ca/data/{1}/{1}.tsv">meta</a>]')
     template_out = ('- {0} ')
     live = [i for i, j in live_hospital['originating_lab']]
