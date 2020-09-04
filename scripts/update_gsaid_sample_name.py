@@ -16,7 +16,7 @@ china_list = ["Anhui", "Beijing", "Foshan", "Fujian", "Fuyang", "Fuzhou", "Ganzh
 
 manual_fix = {"Argentina/PAIS_A007/2020": "Argentina/PAIS-A0007/2020",
 "Argentina/PAIS_A006/2020": "Argentina/PAIS-A0006/2020",
-"Singapore/320nan/2020": "",
+"Singapore/320nan/2020": "Singapore/320nan/2020",# this would need a fix
 "Andalusia/COV001884/2020": "Spain/AN-001884/2020",
 "Indonesia/JKT-EIJK02/2020": "Indonesia/JK-EIJK-02/2020",
 "Brazil/AP161167-IEC/2020": "Brazil/AP-IEC-161167/2020",
@@ -26,7 +26,7 @@ manual_fix = {"Argentina/PAIS_A007/2020": "Argentina/PAIS-A0007/2020",
 "Brazil/AC162535-IEC/2020": "Brazil/AC-IEC-162535/2020",
 "Brazil/PA161548-IEC/2020": "Brazil/PA-IEC-161548/2020",
 "Germany/HH-1/2020": "Germany/HH-UMC-01/2020",
-"Germany/BavPat1/2020": "",
+"Germany/BavPat1/2020": "Germany/BavPat1/2020",# this would need a fix
 "Italy/Siena-1/2020": "Italy/TUS-UniSI-1/2020",
 "Italy/IZSPB_45/2020": "Italy/APU-UniMI-45/2020",
 "Spain/Madrid_H12_1804/2021": "Spain/Madrid-H12-1804/2020",
@@ -36,8 +36,8 @@ manual_fix = {"Argentina/PAIS_A007/2020": "Argentina/PAIS-A0007/2020",
 "Italy/INMI8/2020": "Italy/LAZ-INMI-8/2020",
 "Italy/206/2020": "Italy/EMR-AMVRC-206/2020",
 "Italy/INMI9/2020": "Italy/LAZ-INMI-9/2020",
-"USA/CA-QDX-03-2/2020": "USA/CA-QDX-03/2020",
-"USA/NY-QDX-01-2/2020": "USA/NY-QDX-01/202000",
+"USA/CA-QDX-03-2/2020": "USA/CA-QDX-03-2/2020",
+"USA/NY-QDX-01-2/2020": "USA/NY-QDX-01-2/2020",
 "USA/MI-MDHHS-SC20007/2020": "USA/MI-SC2-0007/2020",
 "USA/MI-MDHHS-SC20008/2020": "USA/MI-SC2-0008/2020",
 "Sweden/COV001953/2020": "Spain/AN-001953/2020"}
@@ -195,6 +195,8 @@ def main():
     for k, v in translator.items():
         if k != v:
             fastas[k].name = v
+            fastas[k].id = v
+            fastas[k].description = v
 
     Bio.SeqIO.write(fastas.values(), '/tmp/sequence_gisad.fasta', 'fasta')
 

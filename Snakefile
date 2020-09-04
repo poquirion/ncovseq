@@ -104,18 +104,20 @@ rule add_canada:
         sequences = "results/filtered_canada.fasta"
     params:
         min_length = config["min_length"],
-        max_date = config["max_date"]
+        max_date = config["max_date"],
+        priority = config["priority"],
+        canada_group = config["canada_group"]
     threads: 1
     shell:
         """augur filter \
-         --sequences-per-group 100 \
+         --sequences-per-group {params.canada_group} \
          --group-by country \
          --min-length {params.min_length} \
          --max-date {params.max_date} \
-         --exclude-where  "country!=Canada" \
+         --exclude-where  "country!=Canada"  "division=Quebec" "neighbour=yes"\
          --metadata {input.metadata} \
          --sequences {input.sequences} \
-         --priority data/priority.txt  \
+         --priority {params.priority}  \
          -o {output.sequences}
          echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
         """
@@ -135,18 +137,20 @@ rule add_neighbour:
         sequences = "results/filtered_neigbour.fasta"
     params:
         min_length = config["min_length"],
-        max_date = config["max_date"]
+        max_date = config["max_date"],
+        priority = config["priority"],
+        neighbour_group = config["neighbour_group"]
     threads: 1
     shell:
         """augur filter \
-         --sequences-per-group 15 \
+         --sequences-per-group {params.neighbour_group} \
          --group-by division \
          --min-length {params.min_length} \
          --max-date {params.max_date} \
          --exclude-where  "neighbour=no" \
          --metadata {input.metadata} \
          --sequences {input.sequences} \
-         --priority data/priority.txt  \
+         --priority {params.priority}  \
          -o {output.sequences}
          echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
         """
@@ -174,7 +178,8 @@ rule filter:
         exclude_where = config["exclude_where"],
         group_by = config["group_by"],
         sequences_per_group = config["sequences_per_group"],
-        max_date = config["max_date"]
+        max_date = config["max_date"],
+        priority = config["priority"]
     shell:
         """
         augur filter \
@@ -188,7 +193,7 @@ rule filter:
             --group-by {params.group_by} \
             --sequences-per-group {params.sequences_per_group} \
             --output {output.sequences} \
-            --priority data/priority.txt
+            --priority {params.priority} 
             echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
         """
 
@@ -201,8 +206,8 @@ rule merge_fasta_selection:
         """
     input:
         rules.filter.output.sequences,
-        # rules.add_canada.output.sequences,
-        # rules.add_neighbour.output.sequences
+        rules.add_canada.output.sequences,
+        rules.add_neighbour.output.sequences
     output:
         sequences = "results/filtered.fasta"
     shell:
@@ -211,8 +216,6 @@ rule merge_fasta_selection:
             --input {input} \
             --output {output.sequences}
         """
-
-
 
 
 checkpoint partition_sequences:
