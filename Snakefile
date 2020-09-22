@@ -105,7 +105,7 @@ rule add_canada:
     params:
         min_length = config["min_length"],
         max_date = config["max_date"]
-    threads: 1
+    threads: 2
     shell:
         """augur filter \
          --sequences-per-group 100 \

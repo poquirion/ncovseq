@@ -144,7 +144,7 @@ def main():
     trans['Rep. Dominicaine'] = 'Dominican Republic'
     trans['cuba'] = 'Cuba'
     trans['Aucun_Voyage'] = '?'
-    lnspq_df['country_exposure'].replace(trans, inplace=True)
+    lnspq_df['country_exposure'] = '?'  # obfuscate travel history in all computations
     lnspq_df['location_exposure'] = lnspq_df['country_exposure']
     lnspq_df['province_exposure'] = lnspq_df['country_exposure']
     lnspq_df['neighbour'] = 'no'
