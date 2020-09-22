@@ -12,7 +12,7 @@ import pandas as pd
 import unidecode
 from country_list import countries_for_language
 
-PUBLISH_META_COLUMN = ['strain', 'virus', 'date', 'date_submitted', 'province', 'age', 'sex', 'originating_lab', 'submitting_lab', 'url']
+PUBLISH_META_COLUMN = ['strain', 'virus', 'date', 'date_submitted', 'province', 'age', 'sex', 'submitting_lab', 'url']
 
 DIVISIONS = ['country', 'location', 'province']
 SCRIPT_DIR = os.path.dirname(__file__)
