@@ -17,7 +17,7 @@ neighbour_group: "20"
 
 # filters
 group_by: "region year month"
-sequences_per_group: "6"  # 10 region year month get about 225 samples
+sequences_per_group: "600000000"  # 10 region year month get about 225 samples
 sub_group_by: "region year month"
 sub_sequences_per_group: "2"
 min_length: 25000
