@@ -206,8 +206,8 @@ rule merge_fasta_selection:
         """
     input:
         rules.filter.output.sequences,
-        rules.add_canada.output.sequences,
-        rules.add_neighbour.output.sequences
+        # rules.add_canada.output.sequences,
+        # rules.add_neighbour.output.sequences
     output:
         sequences = "results/filtered.fasta"
     shell:

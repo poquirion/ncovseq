@@ -185,7 +185,11 @@ def main():
 
     # NY, New England and Canadian provinces
     neighbour = ['New York', 'Ontario', 'Vermont', 'New Hampshire',
-                  "Massachusetts", 'Maine', 'New Brunswick', 'Connecticut', 'Rhode Island']
+                 'Massachusetts', 'Maine', 'New Brunswick',
+                 'Connecticut', 'Rhode Island']
+    # travelling neighbour
+    neighbour += ['Jamaica', 'Mexico', 'Panama', 'Costa Rica', 'France', 'USA', 'United Kingdom']
+
 
     gsaid_df['neighbour'] = 'no'
     gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'neighbour'] = 'yes'

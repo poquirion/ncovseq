@@ -6,7 +6,7 @@ import csv
 import Bio.SeqIO
 from augur.align import read_sequences, write_seqs
 
-# The gisaid id have changes over time, we getting them up to date here.
+# The gisaid id have changes over time, we're getting them up to date here.
 
 
 china_list = ["Anhui", "Beijing", "Foshan", "Fujian", "Fuyang", "Fuzhou", "Ganzhou", "Guangdong", "Guangzhou",
@@ -45,7 +45,7 @@ manual_fix = {"Argentina/PAIS_A007/2020": "Argentina/PAIS-A0007/2020",
 
 
 
-def return_match_names(confused_ids, right_ids):
+def     return_match_names(confused_ids, right_ids):
     correction_dico = {}
 
     working_copy = set(confused_ids)
@@ -165,7 +165,25 @@ def return_match_names(confused_ids, right_ids):
     return correction_dico
 
 
-
+def almost_all_good_metadata_translator():
+    translate  = {'Argentina/PAIS_A001/2020',
+     'Argentina/PAIS_A002/2020',
+     'Argentina/PAIS_A003/2020',
+     'Argentina/PAIS_A004/2020',
+     'Argentina/PAIS_A005/2020',
+     'Argentina/PAIS_A006/2020',
+     'Argentina/PAIS_A007/2020',
+     'Argentina/PAIS_A008/2020',
+     'Mexico/CDMX-InDRE_07/2020',
+     'Mexico/CDMX-InDRE_09/2020',
+     'Mexico/CDMX-InDRE_10/2020',
+     'Mexico/CDMX-InDRE_11/2020',
+     'Mexico/CDMX-InDRE_13/2020',
+     'Mexico/CDMX-InDRE_16/2020',
+     'Mexico/CDMX-InDRE_17/2020',
+     'Mexico/CDMX-InDRE_18/2020',
+     'Spain/Madrid_H12_1804/2021',
+     'USA/UN-UW-1671/2020'}
 
 def main():
     parser = argparse.ArgumentParser(
