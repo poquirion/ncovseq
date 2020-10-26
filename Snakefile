@@ -375,7 +375,7 @@ rule refine:
         root = "--root Wuhan/WH01/2019",
         clock_rate = 0.0008,
         clock_std_dev = 0.0004,
-        coalescent = "skyline",
+        coalescent = "const",
         date_inference = "marginal",
         divergence_unit = "mutations",
         clock_filter_iqd = 4
