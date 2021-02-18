@@ -76,7 +76,6 @@ rule data_setup:
         exclude = "results/exclude.txt",
         selected_lspq = "results/lspq_only_metadata.tsv",
         ordering = "results/ordering.tsv",
-        lat_long = "results/lat_long.tsv"
     params:
         extra_fasta = config['extra_fasta']
     shell:
@@ -85,10 +84,20 @@ rule data_setup:
          {params.extra_fasta}
         scripts/concat_meta.py --inspq_meta {input.qc_meta} --nextstrain_metadata {input.world_meta}  --output \
         {output.metadata} --fasta_dir  {input.fasta_path} --output_lspq_only {output.selected_lspq} \
-        --out_order {output.ordering} --out_lat_long {output.lat_long}
+        --out_order {output.ordering} --keep_all_meta
         cp {input.world_exclude} {output.exclude} 
         cat {input.local_exclude} >> {output.exclude}
         """
+
+rule lat_long:
+    message: "Organize and merge metadata, fasta, exclude"
+    output:
+        lat_long = "results/lat_long.tsv"
+    shell:
+        """
+        scripts/concat_location.py --out_lat_long {output.lat_long}
+        """
+
 
 
 rule add_canada:
@@ -372,7 +381,7 @@ rule refine:
         root = "--root Wuhan/WH01/2019",
         clock_rate = 0.0008,
         clock_std_dev = 0.0004,
-        coalescent = "skyline",
+        coalescent = "const",
         date_inference = "marginal",
         divergence_unit = "mutations",
         clock_filter_iqd = 4
@@ -403,7 +412,7 @@ rule ancestral:
           - inferring ambiguous mutations
         """
     input:
-        tree = "results/tree.nwk",
+        tree = rules.refine.output.tree,
         alignment = _get_alignments_for_tree
     output:
         node_data = "results/nt_muts.json"
@@ -439,7 +448,7 @@ rule haplotype_status:
 rule translate:
     message: "Translating amino acid sequences"
     input:
-        tree = "results/tree.nwk",
+        tree = rules.refine.output.tree,
         node_data = rules.ancestral.output.node_data,
         reference = config["reference"]
     output:
@@ -472,7 +481,7 @@ rule traits:
           partially account for sampling bias
         """
     input:
-        tree = "results/tree.nwk",
+        tree = rules.refine.output.tree,
         metadata = rules.adjust_metadata.output
     output:
         node_data = "results/traits_{trait_rez}.json"
@@ -493,7 +502,7 @@ rule traits:
 rule clades:
     message: "Adding internal clade labels"
     input:
-        tree = "results/tree.nwk",
+        tree = rules.refine.output.tree,
         aa_muts = rules.translate.output.node_data,
         nuc_muts = rules.ancestral.output.node_data,
         clades = config["clades"]
@@ -576,7 +585,7 @@ rule export:
         traits = expand(rules.traits.output.node_data, trait_rez=TRAIT_REZ, allow_missing=True),
         auspice_config = config["auspice_config"],
         colors = rules.colors.output.colors,
-        lat_longs = rules.data_setup.output.lat_long,
+        lat_longs = rules.lat_long.output.lat_long,
         description = config["description"],
         clades = "results/clades.json",
         recency = rules.recency.output
@@ -628,6 +637,20 @@ rule dated_json:
         cp {input.tip_frequencies_json} {output.dated_tip_frequencies_json}
         """
 
+rule redo_maps:
+    message: "Removing directories: {params}"
+    params:
+        "results ",
+        "auspice"
+    shell:
+        """
+        rm -f {rules.fix_colorings.output.auspice_json}
+        rm -f {rules.tip_frequencies.output.tip_frequencies_json}
+        rm -f {rules.export.output.auspice_json}
+        rm -f {rules.lat_long.output.lat_long}
+        """
+
+
 rule clean:
     message: "Removing directories: {params}"
     params:
@@ -635,6 +658,7 @@ rule clean:
         "auspice"
     shell:
         "find {params} -type f -not -name 'nextstrain_exclude*' -print0 | xargs --null -P 33 -L 1  rm  "
+
 
 
 rule reprod_zip:
