@@ -51,10 +51,18 @@ rule all:
         auspice_json = "auspice/ncov.json",
         tip_frequencies_json = "auspice/ncov_tip-frequencies.json",
 
+
 include: "workflow/snakemake_rules/organize_meta.smk"
 include: "workflow/snakemake_rules/select_align_fasta.smk"
 include: "workflow/snakemake_rules/build_tree.smk"
 include: "workflow/snakemake_rules/prepare_visu.smk"
+
+
+rule tree_only:
+    input:
+        tree = rules.refine.output.tree,
+        alignement = rules.aggregate_alignments.output.alignment
+
 
 
 rule redo_maps:

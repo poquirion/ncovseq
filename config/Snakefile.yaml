@@ -2,10 +2,10 @@
 # To temporarily override or provide a value, you can use snakemake's --config
 # or --configfile options.
 ---
-fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze1/"
-#fasta_path: "/genfs/projects/COVID_consensus/test_sample/"
+#fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze2/"
+fasta_path: "/genfs/projects/COVID_consensus/test_sample/"
 qc_meta: "/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv"
-world_meta: "config/metadata_2020-09-02_13-11.tsv"
+world_meta: "/genfs/projects/COVID_consensus/release_data_freeze2/gsaid_companion/metadata_2021-02-19_07-55.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
 extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta"

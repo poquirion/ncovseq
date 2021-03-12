@@ -9,6 +9,19 @@ rule download_latest_excludes:
         touch {output.local_world_exclude} # nothing comming from the outside on that run
         """
 
+# rule aling_all_data:
+#     message: "align all data up to june 1 and freeze data too"
+#
+#     input:
+#         raw_fastq = config['gsaid_fasta'],
+#         our_data = config['fasta_path'],
+#         wuhan = config['wuhan']
+#     output:
+#         all_alined_fastq = 'intermediate/all_aligned.fasta'
+#     shell:
+#         """
+#         """
+
 rule data_setup:
     message: "Organize and merge metadata, fasta, exclude"
     input:
