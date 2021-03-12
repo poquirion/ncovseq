@@ -1,6 +1,19 @@
-
 These are the tools used to release the public version of the material avalable https://covseq
 .ca/
 
 The phylogenetic analysis of public versions of the data available at https://covseq is also done using the current
- Snakefile derived from the [original ncov project of Nexstrain](https://github.com/nextstrain/ncov).
+Snakefile derived from the [original ncov project of Nexstrain](https://github.com/nextstrain/ncov).
+
+
+
+# INSTALL
+
+```bash
+INSTALL_DIR=~/home/python_env
+
+python3 -m venv $INSTALL_DIR/ncovseq 
+source $INSTALL_DIR/ncovseq/bin/activate
+pip3 install workflow/envs/requirement.txt
+```
+mafft and iqtree need to be installed 
+

@@ -26,10 +26,9 @@ def main():
 
     in_fasta = glob.glob("{}/*fasta".format(in_dir))
 
-    sequences = read_sequences(*in_extra)
-    sequences.update(read_sequences(*in_fasta))
+    sequences = read_sequences(*in_fasta, *in_extra)
 
-    Bio.SeqIO.write(sequences.values(), out_file, 'fasta')
+    Bio.SeqIO.write(sequences, out_file, 'fasta')
 
 def dir_path(path):
     if os.access(path, os.R_OK):

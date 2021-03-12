@@ -16,7 +16,7 @@ from country_list import countries_for_language
 PUBLISH_META_COLUMN = ['strain', 'virus', 'date','date_submitted', 'country', 'location', 'province', 'location_exposure',
                        'ct', 'age', 'sex', 'originating_lab', 'submitting_lab', 'url', 'neighbour']
 
-DIVISIONS = ['country', 'location', 'province']
+DIVISIONS = ['country', 'location', 'province', 'rss']
 
 
 def count_fasta_len(fastas):
@@ -27,37 +27,6 @@ def count_fasta_len(fastas):
             id_len[fasta_id] = len(fp.read())
 
     return id_len
-
-
-def genetate_lat_long(df, file_name='results/lat_long.tsv', misc_position='config/misc_lat_long.tsv',
-                      lat_long_list=None):
-    if lat_long_list is None:
-        lat_long_list = ['config/country_lat_long.tsv',
-                         'config/canada_lat_long.tsv',
-                         'config/province_lat_long.tsv']
-
-    misc_df = pd.read_csv(misc_position, sep='\t')
-    misc_df = misc_df[misc_df['type'] == 'country']
-    misc_df.rename(columns={'id': 'location'}, inplace=True)
-
-    country = pd.DataFrame()
-    for pos_file in lat_long_list:
-        country = country.append(pd.read_csv(pos_file, sep='\t', header=0))
-
-    country = country.append(misc_df[['location', 'lat', 'long']][~misc_df['location'].isin(country['location'])],
-                             sort=False)
-
-    # remove file if exist because we are in 'a' mode
-    try:
-        os.remove(file_name)
-    except OSError:
-        pass
-
-    for d in DIVISIONS:
-        country.insert(0, column='type', value=d)
-        country.to_csv(file_name, sep='\t', index=False, header=False, mode='a')
-        del country['type']
-
 
 
 def create_ordering(df, file_name='results/ordering.tsv'):
@@ -89,8 +58,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--inspq_meta", default='data/sgil_extract.tsv', help="The LNSPQ .tsv")
-    parser.add_argument("--nextstrain_metadata", help="The .tsv that comes by "
-                                                                                       "with nextstrain")
+    parser.add_argument("--nextstrain_metadata", help="The .tsv that comes by with nextstrain (from gsaid in fact)")
     parser.add_argument("--fasta_dir", default=None, help="The modified .tsv")
     parser.add_argument("--output", default='results/merged_metadata.tsv', help="The modified .tsv")
     parser.add_argument("--output_lspq_only", default='results/lspq_only_metadata.tsv', help="Aproved lspq .tsv")
@@ -99,7 +67,7 @@ def main():
     parser.add_argument('--id_format', default='Canada/Qc-{}/2020', type=str, help="format for publish "
                                                                                                   "id")
     parser.add_argument('--out_order', type=str, help="ordering for auspice visualisation")
-    parser.add_argument('--out_lat_long', type=str, help="lat_long output file")
+    parser.add_argument('--keep_all_meta', action='store_true', help="do not filter metadata (not for public site)")
 
     args = parser.parse_args()
     in_path = args.nextstrain_metadata
@@ -110,7 +78,7 @@ def main():
     id_format = args.id_format
     approved_lspq_tsv = args.output_lspq_only
     out_order = args.out_order
-    out_lat_long = args.out_lat_long
+    keep_meta = args.keep_all_meta
 
 
     gsaid_df = pd.read_csv(in_path, sep='\t')
@@ -172,8 +140,6 @@ def main():
     lnspq_df['submitting_lab'] = 'LSPQ'
     lnspq_df['date_submitted'] = datetime.datetime.today().strftime('%Y-%m-%d')
 
-
-
     if fasta_dir:
         lnspq_df['url'] = 'http://www.covseq.ca/data/'
     else:
@@ -207,13 +173,18 @@ def main():
         return in_df[PUBLISH_META_COLUMN]
 
     approved_lspq = only_valid(lnspq_df)
+
+
     approved_lspq.to_csv(approved_lspq_tsv, sep='\t', index=False)
 
-    final_df = pd.concat([approved_lspq, gsaid_df], sort=False)
+    if keep_meta:
+        final_df = pd.concat([lnspq_df, gsaid_df], sort=False)
+    else:
+        final_df = pd.concat([approved_lspq, gsaid_df], sort=False)
+
     final_df.drop_duplicates(subset='strain', keep="first", inplace=True)
     final_df.to_csv(out_path, sep='\t', index=False)
     create_ordering(final_df, file_name=out_order)
-    genetate_lat_long(final_df, file_name=out_lat_long)
 
     if subsample:
         name = os.path.basename(out_path)
