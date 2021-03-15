@@ -58,6 +58,8 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--inspq_meta", default='data/sgil_extract.tsv', help="The LNSPQ .tsv")
+    #parser.add_argument("--intro_meta", default='~/meta/dfIntros_origins_4map.csv', help="The Beast computed
+    # intro.tsv")
     parser.add_argument("--nextstrain_metadata", help="The .tsv that comes by with nextstrain (from gsaid in fact)")
     parser.add_argument("--fasta_dir", default=None, help="The modified .tsv")
     parser.add_argument("--output", default='results/merged_metadata.tsv', help="The modified .tsv")
@@ -79,23 +81,13 @@ def main():
     approved_lspq_tsv = args.output_lspq_only
     out_order = args.out_order
     keep_meta = args.keep_all_meta
+    args
 
 
     gsaid_df = pd.read_csv(in_path, sep='\t')
-    lnspq_df = pd.read_csv(lnspq_path, sep='\t')
+    lnspq_df = pd.read_csv(lnspq_path, sep=',')
 
     # traduction from fr to en
-    traduc = {'NO_LSPQ': 'strain',
-              'AGE': 'age',
-              'SEX': 'sex',
-              'MAX_CT': 'ct',
-              'RSS_PATIENT': 'rss',
-              'VOYAGE_PAYS_1': 'country_exposure',
-              'DATE_PRELEV': 'date',
-              'DATE_RECU': 'date_submitted',
-              'CH': 'originating_lab',
-              'POSTAL_CODE': 'rta'}
-    lnspq_df.rename(columns=traduc, inplace=True)
 
     lnspq_df['country_exposure'] = [unidecode.unidecode(p.title()) for p in lnspq_df['country_exposure']]
     # lnspq_df['date_submitted'] = "{}s".format(datetime.datetime.today())
@@ -117,9 +109,9 @@ def main():
     lnspq_df['province_exposure'] = lnspq_df['country_exposure']
     lnspq_df['neighbour'] = 'no'
 
-    def updateid(old_id):
-        return id_format.format(old_id)
-    lnspq_df['strain'] = lnspq_df['strain'].apply(updateid)
+    # def updateid(old_id):
+    #     return id_format.format(old_id)
+    # lnspq_df['strain'] = lnspq_df['strain'].apply(updateid)
 
     fastas = glob.glob("{}/*fasta".format(fasta_dir))
     fasta_id_len = count_fasta_len(fastas)
@@ -128,7 +120,10 @@ def main():
 
 
     # Keep in only sample present in the fasta
-    lnspq_df.drop(lnspq_df[lnspq_df['lenth'].isna()].index, inplace=True)
+    try:
+        lnspq_df.drop(lnspq_df[lnspq_df['lenth'].isna()].index, inplace=True)
+    except KeyError:
+        pass
 
     lnspq_df['province'] = 'Quebec'
     lnspq_df['virus'] = 'ncov'
@@ -157,9 +152,9 @@ def main():
     gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'neighbour'] = 'yes'
 
     # we will do only location and province
-    # gsaid_df.loc[gsaid_df['region'] != 'North America', 'rss'] = gsaid_df['country']
+    gsaid_df.loc[gsaid_df['region'] != 'North America', 'rss'] = gsaid_df['country']
     # gsaid_df.loc[gsaid_df['region'] != 'North America', 'rta'] = gsaid_df['country']
-    # gsaid_df.loc[gsaid_df['region'] == 'North America', 'rss'] = gsaid_df['country']
+    gsaid_df.loc[gsaid_df['region'] == 'North America', 'rss'] = gsaid_df['country']
     # gsaid_df.loc[gsaid_df['region'] == 'North America', 'rta'] = gsaid_df['country']
 
     gsaid_df['location_exposure'] = gsaid_df['country_exposure']
@@ -169,17 +164,18 @@ def main():
     gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'province'] = gsaid_df['division']
     gsaid_df['location'] = gsaid_df['country']
 
-    def only_valid(in_df):
-        return in_df[PUBLISH_META_COLUMN]
-
-    approved_lspq = only_valid(lnspq_df)
-
-
-    approved_lspq.to_csv(approved_lspq_tsv, sep='\t', index=False)
 
     if keep_meta:
         final_df = pd.concat([lnspq_df, gsaid_df], sort=False)
+        lnspq_df.to_csv(approved_lspq_tsv, sep='\t', index=False)
     else:
+        def only_valid(in_df):
+            return in_df[PUBLISH_META_COLUMN]
+
+        approved_lspq = only_valid(lnspq_df)
+
+        approved_lspq.to_csv(approved_lspq_tsv, sep='\t', index=False)
+
         final_df = pd.concat([approved_lspq, gsaid_df], sort=False)
 
     final_df.drop_duplicates(subset='strain', keep="first", inplace=True)

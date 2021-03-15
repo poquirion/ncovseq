@@ -7,13 +7,23 @@
   ],
   "colorings": [
     {
+      "key": "rss",
+      "title": "Régions sociosanitaires",
+      "type": "categorical"
+    },
+    {
+      "key": "cladePang",
+      "title": "Pangolin Clades",
+      "type": "categorical"
+    },
+    {
       "key": "location",
       "title": "Location",
       "type": "categorical"
     },
     {
       "key": "province",
-      "title": "Province",
+      "title": "Provinces",
       "type": "categorical"
     },
     {

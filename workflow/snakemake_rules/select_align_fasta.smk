@@ -60,8 +60,6 @@ rule add_neighbour:
         """
 
 
-
-
 rule filter:
     message:
         """
@@ -138,57 +136,20 @@ checkpoint partition_sequences:
             --output-dir {output.split_sequences}
         """
 
-rule partitions_intermediate:
-    message:
-        """
-        partitions_intermediate: Copying sequence fastas
-        {wildcards.cluster}
-        """
-    input:
-        "results/split_sequences/pre/{cluster}.fasta"
-    output:
-        "results/split_sequences/post/{cluster}.fasta"
-    shell:
-        "cp {input} {output}"
 
 rule align:
     message:
         """
-        Aligning sequences to {input.reference}
-          - gaps relative to reference are considered real
-        Cluster:  {wildcards.cluster}
+        Already alined
         """
     input:
-        sequences = rules.partitions_intermediate.output,
-        reference = config["reference"]
-    output:
-        alignment = "results/split_alignments/{cluster}.fasta"
-    threads: 2
-    shell:
-        """
-        augur align \
-            --sequences {input.sequences} \
-            --reference-sequence {input.reference} \
-            --output {output.alignment} \
-            --nthreads {threads} \
-            --remove-reference \
-            --fill-gaps
-        """
-
-def _get_alignments(wildcards):
-    checkpoint_output = checkpoints.partition_sequences.get(**wildcards).output[0]
-    return expand("results/split_alignments/{i}.fasta",
-                  i=glob_wildcards(os.path.join(checkpoint_output, "{i}.fasta")).i)
-
-rule aggregate_alignments:
-    message: "Collecting alignments"
-    input:
-        alignments = _get_alignments
+        sequences = rules.filter.output,
     output:
         alignment = "results/aligned.fasta"
+    threads: 1
     shell:
         """
-        cat {input.alignments} > {output.alignment}
+        cp {input.sequences} {output.alignment} \
         """
 
 rule mask:
@@ -200,7 +161,7 @@ rule mask:
           - masking other sites: {params.mask_sites}
         """
     input:
-        alignment = rules.aggregate_alignments.output.alignment
+        alignment = rules.align.output.alignment
     output:
         alignment = "results/masked.fasta"
     params:

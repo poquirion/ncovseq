@@ -61,7 +61,7 @@ include: "workflow/snakemake_rules/prepare_visu.smk"
 rule tree_only:
     input:
         tree = rules.refine.output.tree,
-        alignement = rules.aggregate_alignments.output.alignment
+        alignement = rules.align.output.alignment
 
 
 

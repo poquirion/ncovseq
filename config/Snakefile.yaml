@@ -3,12 +3,15 @@
 # or --configfile options.
 ---
 #fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze2/"
-fasta_path: "/genfs/projects/COVID_consensus/test_sample/"
-qc_meta: "/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv"
-world_meta: "/genfs/projects/COVID_consensus/release_data_freeze2/gsaid_companion/metadata_2021-02-19_07-55.tsv"
+#fasta_path: "/genfs/projects/COVID_consensus/test_sample/"
+fasta_path: "/genfs/projects/COVID_consensus/null/"
+qc_meta: "/home/poq/meta/metadataQC_postprocessing2.csv"
+#world_meta: "/genfs/projects/COVID_consensus/release_data_freeze2/gsaid_companion/metadata_2021-02-19_07-55.tsv"
+world_meta: "config/Wuhan_WH01_2019.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta"
+extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta /genfs/projects/COVID_consensus/release_data_freeze2/freeze2_large_alignment_quebec.fasta"
+intro_meta: "/home/poq/meta/dfIntros_origins_4map.csv"
 
 tree_method: "iqtree"
 substitution-model: "GTR" # {HKY,GTR,HKY+G,GTR+G,GTR+R10}
