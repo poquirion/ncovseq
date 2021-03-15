@@ -128,7 +128,10 @@ def main():
 
 
     # Keep in only sample present in the fasta
-    lnspq_df.drop(lnspq_df[lnspq_df['lenth'].isna()].index, inplace=True)
+    try:
+        lnspq_df.drop(lnspq_df[lnspq_df['lenth'].isna()].index, inplace=True)
+    except KeyError:
+        pass
 
     lnspq_df['province'] = 'Quebec'
     lnspq_df['virus'] = 'ncov'
@@ -154,7 +157,11 @@ def main():
                   "Massachusetts", 'Maine', 'New Brunswick', 'Connecticut', 'Rhode Island']
 
     gsaid_df['neighbour'] = 'no'
-    gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'neighbour'] = 'yes'
+
+    try:
+        gsaid_df.loc[gsaid_df['division'].isin(neighbour), 'neighbour'] = 'yes'
+    except KeyError:
+        pass
 
     # we will do only location and province
     # gsaid_df.loc[gsaid_df['region'] != 'North America', 'rss'] = gsaid_df['country']

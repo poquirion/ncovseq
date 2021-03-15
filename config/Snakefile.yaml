@@ -3,12 +3,12 @@
 # or --configfile options.
 ---
 #fasta_path: "/genfs/projects/COVID_consensus/release_data_freeze2/"
-fasta_path: "/genfs/projects/COVID_consensus/test_sample/"
+fasta_path: "/home/poq/Downloads/sequences_2021-03-12_09-14.fasta"
 qc_meta: "/genfs/projects/COVID_consensus/metadata/sgil_extract.tsv"
-world_meta: "/genfs/projects/COVID_consensus/release_data_freeze2/gsaid_companion/metadata_2021-02-19_07-55.tsv"
+#world_meta: "/genfs/projects/COVID_consensus/release_data_freeze2/gsaid_companion/metadata_2021-02-19_07-55.tsv"
+world_meta: "/home/poq/Downloads/metadata_2021-03-12_18-27.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta"
 
 tree_method: "iqtree"
 substitution-model: "GTR" # {HKY,GTR,HKY+G,GTR+G,GTR+R10}
@@ -20,7 +20,7 @@ sub_group_by: "region year month"
 sub_sequences_per_group: "2"
 min_length: 25000
 exclude_where: "date='2015'"
-max_date: "20200401" # YYYYMMDD
+max_date: "2020401" # YYYYMMDD
 
 # put the right input output connections in snakefile
 ordering: "results/ordering.tsv"
@@ -34,7 +34,7 @@ auspice_config: "config/auspice_config.json"
 auspice_config_gisaid: "config/auspice_config_gisaid.json"
 auspice_config_zh: "config/auspice_config_zh.json"
 lat_longs: "config/lat_longs.tsv"
-description: "config/description_freeze1.md"
+description: "config/description.md"
 description_zh: "config/description_zh.md"
 clades: "config/clades.tsv"
 

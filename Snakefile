@@ -36,7 +36,7 @@ def get_todays_date():
 # Add new regions here!
 REGIONS = ["_quebec","_global"]
 
-TRAIT_REZ = ('location','province')
+TRAIT_REZ = ('division')
 
 wildcard_constraints:
     region = "|".join(REGIONS) + "||",

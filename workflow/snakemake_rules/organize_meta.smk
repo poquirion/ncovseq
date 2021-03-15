@@ -26,7 +26,6 @@ rule data_setup:
     message: "Organize and merge metadata, fasta, exclude"
     input:
         fasta_path = config["fasta_path"],
-        qc_meta = config['qc_meta'],
         world_meta = config['world_meta'],
         world_exclude = rules.download_latest_excludes.output.local_world_exclude,
         local_exclude = config['local_exclude']
@@ -34,19 +33,16 @@ rule data_setup:
         sequences = "results/sequences.fasta",
         metadata = "results/merged_metadata.tsv",
         exclude = "results/exclude.txt",
-        selected_lspq = "results/lspq_only_metadata.tsv",
         ordering = "results/ordering.tsv",
-    params:
-        extra_fasta = config['extra_fasta']
     shell:
         """
-        scripts/concat_fasta.py --input_dir {input.fasta_path} --output {output.sequences}\
-         {params.extra_fasta}
-        scripts/concat_meta.py --inspq_meta {input.qc_meta} --nextstrain_metadata {input.world_meta}  --output \
-        {output.metadata} --fasta_dir  {input.fasta_path} --output_lspq_only {output.selected_lspq} \
-        --out_order {output.ordering} --keep_all_meta
         cp {input.world_exclude} {output.exclude} 
         cat {input.local_exclude} >> {output.exclude}
+        head -n 1 {input.world_meta}  > {output.metadata}
+        grep -i "Canada/QC" {input.world_meta} | grep Moreira >> {output.metadata}
+        grep "Wuhan/WH01/2019" {input.world_meta} >> {output.metadata}
+        cp {input.fasta_path}  {output.sequences}
+        cp config/ordering.tsv {output.ordering}
         """
 
 rule lat_long:

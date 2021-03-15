@@ -1,5 +1,7 @@
 
 [Analisys done using Nexstrain tools](https://nextstrain.org/). 
 
-This phylogeny shows evolutionary relationships of the public data of hCoV-19 of early Québec case, before April 1st
- 2020. For a complete analysis also including meta-analyses using non public data, see (https://)
+Cette arbre phylogénétique montre l'état actuelle de l'effort de séquençage du Covid-19 dans la Province de Québec et
+ est mis as jours sur une base hebdomadaire.
+. / 
+This phylogeny shows the current state of Québec's Covid-19 sequencing effort and is updated on a weekly basis.

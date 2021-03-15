@@ -86,15 +86,9 @@ rule filter:
     shell:
         """
         augur filter \
-            --max-date {params.max_date} \
             --sequences {input.sequences} \
             --metadata {input.metadata} \
-            --include {input.include} \
-            --exclude {input.exclude} \
-            --exclude-where {params.exclude_where}\
             --min-length {params.min_length} \
-            --group-by {params.group_by} \
-            --sequences-per-group {params.sequences_per_group} \
             --output {output.sequences} \
             --priority data/priority.txt
             echo contatenated fasta: `grep '>' {output.sequences} | wc -l` 
