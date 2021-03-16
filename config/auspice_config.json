@@ -12,6 +12,11 @@
       "type": "categorical"
     },
     {
+      "key": "rss",
+      "title": "Régions sociosanitaires",
+      "type": "categorical"
+    },
+    {
       "key": "cladePang",
       "title": "Pangolin Clades",
       "type": "categorical"
@@ -60,6 +65,9 @@
     "rss"
   ],
   "panels": [
-    "map"
+    "tree",
+    "entropy",
+    "map",
+    "frequencies"
   ]
 }

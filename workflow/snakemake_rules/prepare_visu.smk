@@ -29,7 +29,7 @@ rule haplotype_status:
     output:
         node_data = "results/haplotype_status.json"
     params:
-        reference_node_name = "Wuhan/WH01/2019"
+        reference_node_name = "Canada/Qc-L00218056/2020"
     shell:
         """
         python3 scripts/annotate-haplotype-status.py \

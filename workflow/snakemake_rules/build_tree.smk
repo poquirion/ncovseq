@@ -49,7 +49,7 @@ rule refine:
         node_data = "results/branch_lengths.json"
     threads: 1
     params:
-        root = "--root Wuhan/WH01/2019",
+        root = "--root Canada/Qc-L00218056/2020",
         clock_rate = 0.0008,
         clock_std_dev = 0.0004,
         coalescent = "const",

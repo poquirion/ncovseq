@@ -81,7 +81,6 @@ def main():
     approved_lspq_tsv = args.output_lspq_only
     out_order = args.out_order
     keep_meta = args.keep_all_meta
-    args
 
 
     gsaid_df = pd.read_csv(in_path, sep='\t')

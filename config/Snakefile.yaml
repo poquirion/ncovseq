@@ -10,7 +10,7 @@ qc_meta: "/home/poq/meta/metadataQC_postprocessing2.csv"
 world_meta: "config/Wuhan_WH01_2019.tsv"
 exclude_latest: "https://raw.githubusercontent.com/nextstrain/ncov/master/config/exclude.txt"
 local_exclude: 'config/local_exclude.txt'
-extra_fasta: "--extra_fasta_files config/Wuhan_WH01_2019.fasta /genfs/projects/COVID_consensus/release_data_freeze2/freeze2_large_alignment_quebec.fasta"
+extra_fasta: "--extra_fasta_files /genfs/projects/COVID_consensus/release_data_freeze2/freeze2_large_alignment_quebec.fasta"
 intro_meta: "/home/poq/meta/dfIntros_origins_4map.csv"
 
 tree_method: "iqtree"
