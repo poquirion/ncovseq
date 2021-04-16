@@ -15,8 +15,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Read sequences with augur to benefit from additional checks for duplicates.
-    sequences = list(read_sequences(*args.sequences).values())
-
+    sequences = read_sequences(*args.sequences)
     # Create the requested output directory.
     output_dir = Path(args.output_dir)
     output_dir.mkdir(exist_ok=True)

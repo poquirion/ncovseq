@@ -1,0 +1,6 @@
+
+These are the tools used to release the public version of the material avalable https://covseq
+.ca/
+
+The phylogenetic analysis of public versions of the data available at https://covseq is also done using the current
+ Snakefile derived from the [original ncov project of Nexstrain](https://github.com/nextstrain/ncov).

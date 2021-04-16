@@ -34,7 +34,8 @@
   ],
   "geo_resolutions": [
     "location",
-    "province"
+    "province",
+    "rss"
   ],
   "display_defaults": {
     "color_by": "location",
@@ -45,11 +46,10 @@
   },
   "filters": [
     "province",
-    "location"
+    "location",
+    "rss"
   ],
   "panels": [
-    "tree",
-    "map",
-    "entropy"
+    "map"
   ]
 }
